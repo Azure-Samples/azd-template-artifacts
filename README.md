@@ -1,6 +1,8 @@
+# This is the template README for what is expected in submitted templates.
+
 # Project Name
 
-(short, 1-3 sentenced, description of the project)
+(short, 1-3 sentenced, description what a developer will get with this template project)
 
 ## Features
 
@@ -47,6 +49,10 @@ To run the demo, follow these steps:
 1.
 2.
 3.
+
+## Security Guidelines
+
+TODO: team will add the guidelines here for best security practices.
 
 ## Resources
 
