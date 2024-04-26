@@ -81,6 +81,6 @@ TODO: team will add the guidelines here for best security practices.
  
 - Link to supporting information
 - Link to similar sample
-- [https://learn.microsoft.com/azure/developer/python/azure-ai-for-python-developers](Develop Python apps that use Azure AI services)
+- [Develop Python apps that use Azure AI services](https://learn.microsoft.com/azure/developer/python/azure-ai-for-python-developers)
 - ...
  
