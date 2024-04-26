@@ -27,5 +27,6 @@ project-name/
 └── package.json                    # Package config file
 ```
 
-## Coding styleguide
+# Recommended coding styleguide
+
 TBD
