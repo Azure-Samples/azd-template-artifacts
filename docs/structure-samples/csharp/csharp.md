@@ -3,7 +3,7 @@
 The following guidelines and the folders included, represent the conventional structure for a C#/.NET standard application.
 
 ```bash
-ProjectName/
+~root
 │
 ├── src/                            # Source code files
 │   ├── ProjectName.Core/           # Core project (contains business logic)

@@ -4,7 +4,7 @@ The following guidelines and the folders included, represent the conventional st
 
 ```bash
 
-ProjectName/
+~root
 │
 ├── src/                            # Source code files
 │   ├── main/                       # Main application code
