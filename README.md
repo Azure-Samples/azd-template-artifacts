@@ -1,7 +1,7 @@
+# This is the template README for what is expected in submitted templates.
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](placeholder)
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](placeholder)
-
-# This is the template README for what is expected in submitted templates.
 
 # Project Name
 
@@ -40,6 +40,8 @@ Include a diagram describing the application
     - MacOS: `brew tap azure/azd && brew install azd`
 - OS
 - Library version
+- This model uses [MODEL 1] and [MODEL 2] which may not be available in all Azure regions. Check for [up-to-date region availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#standard-deployment-model-availability) and select a region during deployment accordingly
+    - We recommend using [SUGGESTED REGION]
 - ...
  
 ### Installation
