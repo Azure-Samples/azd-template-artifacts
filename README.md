@@ -70,9 +70,6 @@ Describe how to run and develop the app locally
 You can estimate the cost of this project's architecture with [Azure's pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/)
  
 - [Azure Product] - [plan type] [link to pricing for product](https://azure.microsoft.com/en-us/pricing/)
- 
-## Security
-
 
 ## Security Guidelines
 
