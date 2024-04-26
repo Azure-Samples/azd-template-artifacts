@@ -1,6 +1,12 @@
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](placeholder)
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](placeholder)
 
+# This is the template README for what is expected in submitted templates.
+
+# Project Name
+
+(short, 1-3 sentenced, description what a developer will get with this template project)
+
 # Project Name
  
 (Longer Description, as compared to the GitHub "about" section of the project)
@@ -63,6 +69,10 @@ You can estimate the cost of this project's architecture with [Azure's pricing c
  
 ## Security
 
+
+## Security Guidelines
+
+TODO: team will add the guidelines here for best security practices.
 
 ## Resources
  
