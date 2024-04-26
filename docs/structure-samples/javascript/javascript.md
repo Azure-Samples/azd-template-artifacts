@@ -16,7 +16,7 @@ project-name/
 │   ├── styles/                     # CSS or Sass stylesheets
 │   ├── assets/                     # Images, fonts, and other assets
 │   ├── utils/                      # Utility functions
-│   └── ...
+│   └── core/
 │
 ├── public/                         # Public files (index.html, favicon.ico, etc.)
 │
@@ -24,7 +24,7 @@ project-name/
 │
 ├── docs/                           # Documentation files
 │
-└── package.json                    # Node.js package file
+└── package.json                    # Package config file
 ```
 
 ## Coding styleguide
