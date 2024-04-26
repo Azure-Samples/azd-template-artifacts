@@ -42,7 +42,7 @@ Include a diagram describing the application
     - MacOS: `brew tap azure/azd && brew install azd`
 - OS
 - Library version
-- This model uses [MODEL 1] and [MODEL 2] which may not be available in all Azure regions. Check for [up-to-date region availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#standard-deployment-model-availability) and select a region during deployment accordingly
+- This model uses [MODEL 1] and [MODEL 2] which may not be available in all Azure regions. Check for [up-to-date region availability](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#standard-deployment-model-availability) and select a region during deployment accordingly
     - We recommend using [SUGGESTED REGION]
 - ...
  
@@ -67,9 +67,9 @@ Include a diagram describing the application
 Describe how to run and develop the app locally
  
 ## Costs
-You can estimate the cost of this project's architecture with [Azure's pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/)
+You can estimate the cost of this project's architecture with [Azure's pricing calculator](https://azure.microsoft.com/pricing/calculator/)
  
-- [Azure Product] - [plan type] [link to pricing for product](https://azure.microsoft.com/en-us/pricing/)
+- [Azure Product] - [plan type] [link to pricing for product](https://azure.microsoft.com/pricing/)
 
 ## Security Guidelines
 
@@ -81,5 +81,6 @@ TODO: team will add the guidelines here for best security practices.
  
 - Link to supporting information
 - Link to similar sample
+- [https://learn.microsoft.com/azure/developer/python/azure-ai-for-python-developers](Develop Python apps that use Azure AI services)
 - ...
  
