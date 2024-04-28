@@ -5,33 +5,47 @@ The following guidelines and the folders included, represent the conventional st
 ```bash
 ~root
 │
-├── src/                            # Source code files
-│   ├── ProjectName.Core/           # Core project (contains business logic)
-│   │   ├── Models/                 # Data models
-│   │   ├── Services/               # Business services
-│   │   ├── Repositories/           # Data access layer
+├── .devcontainer.json          # Moved to top
+├── .github/
+│   └── workflows/
+│       ├── workflow1.yml
+│       ├── workflow2.yml
+│       └── ...                     
+│
+├── infra/
+│   ├── main.bicep
+│   ├── main.parameters.bicep
+│   ├── abbreviations.json
+│   └── ...                         
+│
+├── src/
+│   ├── ProjectName.Core/
+│   │   ├── Models/
+│   │   ├── Services/
+│   │   ├── Repositories/
 │   │   └── ...
-│   │
-│   ├── ProjectName.Web/            # Web project (ASP.NET Core MVC, Web API, or Razor Pages)
-│   │   ├── Controllers/            # MVC controllers or Web API controllers
-│   │   ├── Views/                  # Views for MVC or Razor Pages
-│   │   ├── wwwroot/                # Static files (CSS, JavaScript, etc.)
+│   ├── ProjectName.Web/
+│   │   ├── Controllers/
+│   │   ├── Views/
+│   │   ├── wwwroot/
 │   │   └── ...
-│   │
-│   ├── ProjectName.Tests/          # Unit and integration tests
-│   │   ├── Unit/                   # Unit tests
-│   │   ├── Integration/            # Integration tests
+│   ├── ProjectName.Tests/
+│   │   ├── Unit/
+│   │   ├── Integration/
 │   │   └── ...
-│   │
-│   └── ProjectName.sln             # Visual Studio solution file
+│   └── ProjectName.sln
 │
-├── docs/                           # Documentation files (e.g., README.md, API documentation)
+├── docs/
+│   └── README.md
 │
-├── tools/                          # Tools and utilities
+├── tools/
 │
-├── scripts/                        # Scripts for build, deployment, etc.
+├── scripts/
 │
-└── .gitignore                      # Git ignore file
+├── .gitignore
+├── azure.yaml
+└── README.md
+
 ```
 
 # Recommended coding styleguide
