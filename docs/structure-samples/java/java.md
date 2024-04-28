@@ -6,30 +6,45 @@ The following guidelines and the folders included, represent the conventional st
 
 ~root
 │
-├── src/                            # Source code files
-│   ├── main/                       # Main application code
-│   │   ├── java/                   # Java source files
-│   │   │   ├── com/                # Package structure
-│   │   │   │   ├── projectname/    # Project package
-│   │   │   │   │   ├── controllers/ # Controllers (for MVC projects)
-│   │   │   │   │   ├── services/    # Service classes
-│   │   │   │   │   ├── models/      # Data models
+├── .devcontainer.json
+├── .github/
+│   └── workflows/
+│       ├── workflow1.yml
+│       ├── workflow2.yml
+│       └── ...                     
+│
+├── infra/
+│   ├── main.bicep
+│   ├── main.parameters.bicep
+│   ├── abbreviations.json
+│   └── ...
+│
+├── azure.yaml
+├── pom.xml
+├── README.md
+├── src/                            
+│   ├── main/                       
+│   │   ├── java/                   
+│   │   │   ├── com/                
+│   │   │   │   ├── projectname/    
+│   │   │   │   │   ├── controllers/ 
+│   │   │   │   │   ├── services/    
+│   │   │   │   │   ├── models/      
 │   │   │   │   │   └── ...
 │   │   │   │   └── ...
 │   │   │   └── ...
-│   │   └── resources/              # Resource files (configurations, templates, etc.)
+│   │   └── resources/              
 │   │
-│   └── test/                       # Unit and integration tests
+│   └── test/                       
 │
-├── docs/                           # Documentation files
+├── docs/                           
 │
-├── build/                          # Build output directory
+├── build/                          
 │
-├── lib/                            # Third-party libraries and dependencies
+├── lib/                            
 │
-├── scripts/                        # Scripts for build, deployment, etc.
-│
-└── pom.xml                         # Maven project object model file
+└── scripts/                        
+
 
 ```
 
