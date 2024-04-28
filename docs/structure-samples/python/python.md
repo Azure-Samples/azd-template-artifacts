@@ -6,27 +6,40 @@ The following guidelines and the folders included, represent the conventional st
 
 ~root
 │
-├── src/                            # Source code files
-│   ├── projectname/                # Main package/module
-│   │   ├── __init__.py             # Package initializer
-│   │   ├── core/                   # Core functionality
-│   │   ├── models/                 # Data models
-│   │   ├── services/               # Service classes
+├── .devcontainer.json              # Added file
+├── azure.yaml                      # Added file
+│
+├── .github/
+│   └── workflows/
+│       ├── workflow1.yml           # Added file
+│       ├── workflow2.yml           # Added file
+│       └── ...                     
+│
+├── infra/
+│   ├── main.bicep                  # Added file
+│   ├── main.parameters.bicep       # Added file
+│   ├── abbreviations.json          # Added file
+│   └── ...                         
+│
+├── src/                            
+│   ├── projectname/                
+│   │   ├── __init__.py             
+│   │   ├── core/                   
+│   │   ├── models/                 
+│   │   ├── services/               
 │   │   └── ...
-│   │
-│   └── scripts/                    # Scripts/executables
+│   └── scripts/                    
 │
-├── tests/                          # Unit and integration tests
+├── tests/                          
+│   └── ...                         
 │
-├── docs/                           # Documentation files
+├── docs/                           
+│   └── ...                         
 │
-├── requirements.txt                # Python dependencies
-│
-├── setup.py                        # Setup script for packaging and distribution
-│
-├── README.md                       # Project README
-│
-└── .gitignore                      # Git ignore file
+├── requirements.txt                
+├── setup.py                        
+├── README.md                       
+└── .gitignore                      
 
 ```
 
