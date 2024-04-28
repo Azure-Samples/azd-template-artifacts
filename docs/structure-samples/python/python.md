@@ -6,19 +6,19 @@ The following guidelines and the folders included, represent the conventional st
 
 ~root
 │
-├── .devcontainer.json              # Added file
-├── azure.yaml                      # Added file
+├── .devcontainer.json              
+├── azure.yaml                      
 │
 ├── .github/
 │   └── workflows/
-│       ├── workflow1.yml           # Added file
-│       ├── workflow2.yml           # Added file
+│       ├── workflow1.yml           
+│       ├── workflow2.yml           
 │       └── ...                     
 │
 ├── infra/
-│   ├── main.bicep                  # Added file
-│   ├── main.parameters.bicep       # Added file
-│   ├── abbreviations.json          # Added file
+│   ├── main.bicep                  
+│   ├── main.parameters.bicep       
+│   ├── abbreviations.json          
 │   └── ...                         
 │
 ├── src/                            
@@ -40,6 +40,7 @@ The following guidelines and the folders included, represent the conventional st
 ├── setup.py                        
 ├── README.md                       
 └── .gitignore                      
+             
 
 ```
 
