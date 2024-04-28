@@ -6,25 +6,43 @@ The following guidelines and the folders included, represent the conventional st
 
 ~root
 │
-├── src/                            # Source code files
-│   ├── app/                        # Application code
-│   │   ├── components/             # React/Vue/Angular components
-│   │   ├── services/               # Service classes
-│   │   ├── models/                 # Data models/interfaces
+├── .devcontainer.json              
+├── azure.yaml                      
+│
+├── .github/
+│   └── workflows/
+│       ├── workflow1.yml           
+│       ├── workflow2.yml           
+│       └── ...                     
+│
+├── infra/
+│   ├── main.bicep                  
+│   ├── main.parameters.bicep       
+│   ├── abbreviations.json          
+│   └── ...                         
+│
+├── src/                            
+│   ├── app/                        
+│   │   ├── components/             
+│   │   ├── services/               
+│   │   ├── models/                 
 │   │   └── ...
-│   │
-│   ├── styles/                     # CSS or Sass stylesheets
-│   ├── assets/                     # Images, fonts, and other assets
-│   ├── utils/                      # Utility functions
+│   ├── styles/                     
+│   ├── assets/                     
+│   ├── utils/                      
 │   └── core/
 │
-├── public/                         # Public files (index.html, favicon.ico, etc.)
+├── public/                         
 │
-├── tests/                          # Unit and integration tests
+├── tests/                          
+│   └── ...                         
 │
-├── docs/                           # Documentation files
+├── docs/                           
+│   └── ...                         
 │
-└── package.json                    # Package config file
+├── package.json                    
+├── README.md                       
+
 ```
 
 # Recommended coding styleguide
