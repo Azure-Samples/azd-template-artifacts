@@ -51,4 +51,4 @@ The following guidelines and the folders included, represent the conventional st
 
 # Recommended coding styleguide
 
-TBD
+C# AZD templates follow the [common C# code conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions) used for documentation & samples.
