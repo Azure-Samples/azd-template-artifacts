@@ -56,7 +56,7 @@ The following guidelines and the folders included, represent the conventional st
 
 - Server side JavaScript will be written for the latest Node.js LTS version
 
-- When writing serverless APIs to be deployed to Azure Functions, they should use the model v.4 when possible/supported
+- When writing serverless APIs to be deployed to Azure Functions, they should use the model v4 when possible/supported
 
 - REST is preferred over GraphQL to avoid Apollo conflict resolution across packages
 
