@@ -56,7 +56,7 @@ In the absense of e2e tests,
 
 When a service selected doesn't support Managed Identity, the corresponding issue must have been reported and the security considerations section in the readme, should clearly explain the alternatives.
 
-- Azure Key Vault is a prefered alternative
+- Azure Key Vault is a preferred alternative
 
 ### The following items are not strictly enforced but may prevent the template from being added to the gallery
 
