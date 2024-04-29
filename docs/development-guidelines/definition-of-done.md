@@ -20,8 +20,8 @@ a functional application.
 The following checklist must be complete before a template is published
 
 - [] Standards compliant [readme.md](../../README.md) as the one in the example, is in place
-- [] .workflow file is in place
-- [] GitHub Action runs without errors
+- [] .workflow file is in place (This refers to GitHub Actions .github/workflows/azure-dev.yml or custom workflow to run on a GitHub runner)
+- [] GitHub Action defined above, runs without errors
 - [] .devcontainer configuration is in place
 - [] DevContainer has been tested locally and runs
 - [] Codespaces run
