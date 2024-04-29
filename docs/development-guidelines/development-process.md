@@ -7,7 +7,9 @@ For cross-functional teams working on building a template, the following guideli
 | Label Name | Description                          |
 | ---------- | ------------------------------------ |
 | AI         | AI implementation and implementation |
-| AZD . Bicep| AZD config and Bicep related         |
+| Infra AZD        | AZD related         |
+| Infra Bicep| Infra issues related to Bicep bugs or support |
+| Infra Terraform | Infra issues related to Terraform bugs or support |
 | backend    | Application feature backend          |
 | frontend   | Application feature frontend         |
 | Docs       | Repo docs, guidelines, promo videos  |
