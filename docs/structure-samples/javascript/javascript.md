@@ -6,7 +6,9 @@ The following guidelines and the folders included, represent the conventional st
 
 ~root
 │
-├── .devcontainer.json              
+├── .devcontainer
+│    ├── devcontainer.json
+│    └── post-create-command.sh              
 ├── azure.yaml                      
 │
 ├── .github/

@@ -5,7 +5,10 @@ The following guidelines and the folders included, represent the conventional st
 ```bash
 ~root
 │
-├── .devcontainer.json          # Moved to top
+├── .devcontainer
+│    ├── devcontainer.json
+│    └── post-create-command.sh
+│      
 ├── .github/
 │   └── workflows/
 │       ├── workflow1.yml
