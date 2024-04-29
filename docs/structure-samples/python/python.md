@@ -36,7 +36,7 @@ The following guidelines and the folders included, represent the conventional st
 ├── *docs/                           
 │   └── ...                         
 │
-├── requirements.txt                
+├── requirements-dev.txt                
 ├── README.md                       
 └── .gitignore                      
              
