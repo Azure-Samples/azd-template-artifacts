@@ -20,12 +20,14 @@ a functional application.
 The following checklist must be complete before a template is published
 
 - [] Standards compliant [readme.md](../../README.md) as the one in the example, is in place
+- [] License is in place
+- [] Code of conduct and contribution guidelines are in place
 - [] .workflow file is in place (This refers to GitHub Actions .github/workflows/azure-dev.yml or custom workflow to run on a GitHub runner)
 - [] GitHub Action defined above, runs without errors
 - [] .devcontainer configuration is in place
 - [] DevContainer has been tested locally and runs
 - [] Codespaces run
-- [] Infrastructure as code is in place
+- [] Infrastructure as code is in place (`/infra` folder where applicable, manifest files or code generators in the case of `Aspire` and similar )
 - [] azure.yml file is in place
 - [] `azd up` successfully provisions and deploys a functional app
 - [] Minimum coverage tests are in place
