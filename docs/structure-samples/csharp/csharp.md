@@ -35,8 +35,8 @@ The following guidelines and the folders included, represent the conventional st
 │   │   └── ...
 │   └── ProjectName.sln
 │
-├── docs/
-│   └── README.md
+├── *docs/
+│   └── ...
 │
 ├── tools/
 │
@@ -47,6 +47,7 @@ The following guidelines and the folders included, represent the conventional st
 └── README.md
 
 ```
+* optional additional docs folder for extended documentation files
 
 # Recommended coding styleguide
 

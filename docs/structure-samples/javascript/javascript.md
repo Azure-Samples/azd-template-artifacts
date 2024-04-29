@@ -37,13 +37,14 @@ The following guidelines and the folders included, represent the conventional st
 ├── tests/                          
 │   └── ...                         
 │
-├── docs/                           
+├── * docs/                           
 │   └── ...                         
 │
 ├── package.json                    
 ├── README.md                       
 
 ```
+* optional additional docs folder for extended documentation files
 
 ## Additional recommendations
 

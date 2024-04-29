@@ -33,7 +33,7 @@ The following guidelines and the folders included, represent the conventional st
 ├── tests/                          
 │   └── ...                         
 │
-├── docs/                           
+├── *docs/                           
 │   └── ...                         
 │
 ├── requirements.txt                
@@ -43,6 +43,7 @@ The following guidelines and the folders included, represent the conventional st
              
 
 ```
+* optional additional docs folder for extended documentation files
 
 # Recommended coding styleguide
 
