@@ -13,6 +13,7 @@ For cross-functional teams working on building a template, the following guideli
 | Docs       | Repo docs, guidelines, promo videos  |
 | MSI        | Security and auth                    |
 | Blocked    | Mark a task as blocked and establish dependency |
+| Dependency | Establishes a dependency requirement |
 
 These labels can be used in addition to default labels for `bug`, `enhancement`, etc
 
