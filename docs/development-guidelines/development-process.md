@@ -31,3 +31,8 @@ When applicable, use the `GitHub Projects` feature to track project completion.
 ## Create relevant milestones
 
 Create milestones that issues can be assigned to so ETA can be better established and completion progress assessed.
+
+## Collaborators
+
+> [NOTE]
+> For Microsoft authored samples only: collaborators should be added to a team with write access under the [Azure-Samples Org](https://github.com/Azure-Samples)
