@@ -25,12 +25,12 @@ The following guidelines and the folders included, represent the conventional st
 │
 ├── src/                            
 │   ├── projectname/                
-│   │   ├── __init__.py             
-│   │   ├── core/                   
-│   │   ├── models/                 
-│   │   ├── services/               
-│   │   └── ...
-│   └── scripts/                    
+│        ├── __init__.py             
+│        ├── core/                   
+│        ├── models/                 
+│        ├── services/               
+│        └── ...
+│                      
 │
 ├── tests/                          
 │   └── ...                         
