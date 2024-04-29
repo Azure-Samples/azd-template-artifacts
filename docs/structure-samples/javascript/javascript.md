@@ -31,7 +31,11 @@ The following guidelines and the folders included, represent the conventional st
 │   ├── assets/                     
 │   ├── utils/                      
 │   └── core/
-│
+│   
+├── (1)packages/
+│       ├── app/ 
+│       ├── module/
+│       └── ...
 ├── public/                         
 │
 ├── tests/                          
@@ -45,6 +49,7 @@ The following guidelines and the folders included, represent the conventional st
 
 ```
 * optional additional docs folder for extended documentation files
+(1) /packages to be used in a monorepo context
 
 ## Additional recommendations
 
