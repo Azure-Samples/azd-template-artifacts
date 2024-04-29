@@ -37,7 +37,6 @@ The following guidelines and the folders included, represent the conventional st
 │   └── ...                         
 │
 ├── requirements.txt                
-├── setup.py                        
 ├── README.md                       
 └── .gitignore                      
              
