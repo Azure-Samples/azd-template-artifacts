@@ -46,8 +46,11 @@ The following guidelines and the folders included, represent the conventional st
 ├── * docs/                           
 │   └── ...                         
 │
-├── package.json                    
-├── README.md                       
+├── .env.example # Store project related env vars example
+│
+├── package.json
+│                    
+└── README.md                       
 
 ```
 * optional additional docs folder for extended documentation files
