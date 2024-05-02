@@ -13,7 +13,7 @@ For cross-functional teams working on building a template, the following guideli
 | backend    | Application feature backend          |
 | frontend   | Application feature frontend         |
 | Docs       | Repo docs, guidelines, promo videos  |
-| MSI        | Security and auth                    |
+| Managed Identity        | Security and auth                    |
 | Blocked    | Mark a task as blocked and establish dependency |
 | Dependency | Establishes a dependency requirement |
 

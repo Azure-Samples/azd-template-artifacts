@@ -23,19 +23,19 @@ The following checklist must be complete before a template is published
 
 - [] Standards compliant [README.md](../../README.md) as the one in the example, is in place
 - [] [License](../../LICENSE.md) is in place. Make sure you choose the [correct license](https://www.microsoft.com/en-us/legal/intellectualproperty/open-source)
-- [] [Security guidelines](../../SECURITY.md)are in place
+- [] [Security guidelines](../../SECURITY.md) are in place
 - [] [Contribution guidelines](../../CONTRIBUTING.md) are in place
 - [] [Code of conduct](.github/CODE_OF_CONDUCT.md) is in place
 - [] [Issue template](.github/ISSUE_TEMPLATE.md) is in place
-- [] Language, model and relevant technology topic labels are added, including `azd-templates` and `ai-azd-templates` (The latter is being created)
+- [] Language, model, and relevant technology topic labels are added, including `azd-templates` and `ai-azd-templates` (The latter is being created)
 - [] Repo description is in place, describing the use case and technologies used in the solution
 
 ## Source code structure and conventions
 
-- [] .workflow file is in place (This refers to GitHub Actions .github/workflows/azure-dev.yml or custom workflow to run on a GitHub runner)
-- [] .devcontainer configuration is in place
+- [] GitHub Actions (This refers to .github/workflows/azure-dev.yml or custom workflow to run on a GitHub runner) is in place
+- [] DevContainer (/.devcontainer folder where applicable) configuration is in place
 - [] Infrastructure as code is in place (`/infra` folder where applicable, manifest files or code generators in the case of `Aspire` and similar )
-- [] azure.yml file is in place
+- [] Azure services configuration (/azure.yml file) is in place
 - [] Minimum coverage tests are in place
 
 ## Functional requirements
@@ -52,7 +52,7 @@ In the absense of e2e tests,
 
 ## Security requirements
 
-- [] Microsoft Managed Service Identity is implemented
+- [] Microsoft Managed Identity is implemented
 
 When a service selected doesn't support Managed Identity, the corresponding issue must have been reported and the security considerations section in the readme, should clearly explain the alternatives.
 
