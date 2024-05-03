@@ -2,6 +2,9 @@
 
 The following guidelines as a set of best-practices per domain, must be followed to ensure template functionality.
 
+> [!IMPORTANT]
+> This is a living guideline. Please check often for updates.
+
 ## General guidelines
 
 - Set and read application configuration or settings using `environment variables` and not presets stored in files
