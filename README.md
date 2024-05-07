@@ -6,10 +6,6 @@
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](placeholder)
 
 # Project Name
-
-(short, 1-3 sentenced, description what a developer will get with this template project)
-
-# Project Name
  
 (Longer Description, as compared to the GitHub "about" section of the project)
 (make sure to highlight the use case!)
@@ -74,6 +70,8 @@ You can estimate the cost of this project's architecture with [Azure's pricing c
 ## Security Guidelines
 
 TODO: team will add the guidelines here for best security practices.
+
+Each template has either [Managed Identity](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview) or Key Vault built in to eliminate the need for developers to manage these credentials. Applications can use managed identities to obtain Microsoft Entra tokens without having to manage any credentials. Additionally, we have added a [GitHub Action tool](https://github.com/microsoft/security-devops-action) that scans the infrastructure-as-code files and generates a report containing any detected issues. To ensure best practices in your repo we recommend anyone creating solutions based on our templates ensure that the [Github secret scanning](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning) setting is enabled in your repos.
 
 ## Resources
  
