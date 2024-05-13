@@ -28,7 +28,7 @@ Include a diagram describing the application
  
 ## Getting Started
 
-You have a few options for getting started with this template
+You have a few options for getting started with this template.
 The quickest way to get started is GitHub Codespaces, since it will setup all the tools for you, but you can also [set it up locally](#local-environment).
 
 ### GitHub Codespaces
