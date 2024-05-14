@@ -54,6 +54,14 @@ You can run this template virtually by using GitHub Codespaces. The button will 
     azd up
     ```
 
+6. (Add steps to start up the sample app)
+
+7. Configure a CI/CD pipeline:
+
+    ```shell
+    azd pipeline config
+    ```
+
 ### VS Code Dev Containers
 
 A related option is VS Code Dev Containers, which will open the project in your local VS Code using the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers):
@@ -73,6 +81,14 @@ A related option is VS Code Dev Containers, which will open the project in your 
 
     ```shell
     azd up
+    ```
+
+7. (Add steps to start up the sample app)
+
+8. Configure a CI/CD pipeline:
+
+    ```shell
+    azd pipeline config
     ```
 
 ### Local Environment
@@ -108,6 +124,8 @@ A related option is VS Code Dev Containers, which will open the project in your 
     azd init --template [name-of-repo]
     ```
 
+    This will perform a git clone
+
 2. Sign into your Azure account:
 
     ```shell
@@ -127,13 +145,13 @@ A related option is VS Code Dev Containers, which will open the project in your 
     azd up
     ```
 
-6. Set up CI/CD credentials:
+6. (Add steps to start up the sample app)
+
+7. Configure a CI/CD pipeline:
 
     ```shell
     azd pipeline config
     ```
-
-7. (Add steps to start up the sample app)
 
 #### Local Development
 
