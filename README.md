@@ -56,12 +56,6 @@ You can run this template virtually by using GitHub Codespaces. The button will 
 
 6. (Add steps to start up the sample app)
 
-7. Configure a CI/CD pipeline:
-
-    ```shell
-    azd pipeline config
-    ```
-
 ### VS Code Dev Containers
 
 A related option is VS Code Dev Containers, which will open the project in your local VS Code using the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers):
