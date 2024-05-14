@@ -104,26 +104,32 @@ A related option is VS Code Dev Containers, which will open the project in your 
     azd init --template [name-of-repo]
     ```
 
-2. [Packages or anything else that needs to be installed]
+2. Sign into your Azure account:
+
+    ```shell
+     azd auth login --use-device-code
+    ```
+
+3. [Packages or anything else that needs to be installed]
 
     ```shell
     npm install ...
     ```
 
-3. ...
-4. Provision and deploy the project to Azure:
+4. ...
+5. Provision and deploy the project to Azure:
 
     ```shell
     azd up
     ```
 
-5. Set up CI/CD credentials:
+6. Set up CI/CD credentials:
 
     ```shell
     azd pipeline config
     ```
 
-6. (Add steps to start up the sample app)
+7. (Add steps to start up the sample app)
 
 #### Local Development
 
