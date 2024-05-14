@@ -61,7 +61,7 @@ A related option is VS Code Dev Containers, which will open the project in your 
 4. Sign into your Azure account:
 
     ```shell
-     azd auth login --use-device-code
+     azd auth login
     ```
 
 5. [any other steps needed for your template]
@@ -107,7 +107,7 @@ A related option is VS Code Dev Containers, which will open the project in your 
 2. Sign into your Azure account:
 
     ```shell
-     azd auth login --use-device-code
+     azd auth login
     ```
 
 3. [Packages or anything else that needs to be installed]
