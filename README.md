@@ -10,13 +10,13 @@
 Sample application code is included in this project. You can use or modify this app code or you can rip it out and include your own.
 
 ## Features
- 
+
 This project framework provides the following features:
- 
+
 * Feature 1
 * Feature 2
 * ...
- 
+
 ### Architecture Diagram
 
 Include a diagram describing the application
@@ -173,8 +173,8 @@ This template has either [Managed Identity](https://learn.microsoft.com/entra/id
 ## Resources
 
 (Any additional resources or related projects)
- 
-- Link to supporting information
-- Link to similar sample
-- [Develop Python apps that use Azure AI services](https://learn.microsoft.com/azure/developer/python/azure-ai-for-python-developers)
-- ...
+
+* Link to supporting information
+* Link to similar sample
+* [Develop Python apps that use Azure AI services](https://learn.microsoft.com/azure/developer/python/azure-ai-for-python-developers)
+* ...
