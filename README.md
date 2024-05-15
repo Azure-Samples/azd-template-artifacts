@@ -5,6 +5,10 @@
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](placeholder)
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](placeholder)
 
+(Longer Description, as compared to the GitHub "about" section of the project)
+(make sure to highlight the use case!)
+Sample application code is included in this project. You can use or modify this app code or you can rip it out and include your own.
+
 ## Table of Contents
 
 1. [Features](#features)
@@ -18,10 +22,6 @@
     * [Region Availability](#region-availability)
     * [Costs](#costs)
     * [Security](#security)
-
-(Longer Description, as compared to the GitHub "about" section of the project)
-(make sure to highlight the use case!)
-Sample application code is included in this project. You can use or modify this app code or you can rip it out and include your own.
 
 ## Features
 
