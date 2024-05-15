@@ -9,6 +9,20 @@
 (make sure to highlight the use case!)
 Sample application code is included in this project. You can use or modify this app code or you can rip it out and include your own.
 
+## Table of Contents
+
+1. [Features](#features)
+    * [Architecture Diagram](#architecture-diagram)
+    * [Demo Video](#demo-video-optional)
+2. [Getting Started](#getting-started)
+    * [GitHub Codespaces](#github-codespaces)
+    * [VS Code Dev Containers](#vs-code-dev-containers)
+    * [Local Environment](#local-environment)
+3. [Guidance](#guidance)
+    * [Region Availability](#region-availability)
+    * [Costs](#costs)
+    * [Security](#security)
+
 ## Features
 
 This project framework provides the following features:
@@ -151,13 +165,20 @@ A related option is VS Code Dev Containers, which will open the project in your 
 
 Describe how to run and develop the app locally
 
-## Costs
+## Guidance
+
+### Region Availability
+
+This template uses [MODEL 1] and [MODEL 2] which may not be available in all Azure regions. Check for [up-to-date region availability](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#standard-deployment-model-availability) and select a region during deployment accordingly
+  * We recommend using [SUGGESTED REGION]
+
+### Costs
 
 You can estimate the cost of this project's architecture with [Azure's pricing calculator](https://azure.microsoft.com/pricing/calculator/)
 
-- [Azure Product] - [plan type] [link to pricing for product](https://azure.microsoft.com/pricing/)
+* [Azure Product] - [plan type] [link to pricing for product](https://azure.microsoft.com/pricing/)
 
-## Security Guidelines
+### Security
 
 > [!NOTE]
 > When implementing this template please specify whether the template uses Managed Identity or Key Vault
