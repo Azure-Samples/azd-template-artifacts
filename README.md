@@ -5,6 +5,20 @@
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](placeholder)
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](placeholder)
 
+## Table of Contents
+
+1. [Features](#features)
+    * [Architecture Diagram](#architecture-diagram)
+    * [Demo Video](#demo-video-optional)
+2. [Getting Started](#getting-started)
+    * [GitHub Codespaces](#github-codespaces)
+    * [VS Code Dev Containers](#vs-code-dev-containers)
+    * [Local Environment](#local-environment)
+3. [Guidance](#guidance)
+    * [Region Availability](#region-availability)
+    * [Costs](#costs)
+    * [Security](#security)
+
 (Longer Description, as compared to the GitHub "about" section of the project)
 (make sure to highlight the use case!)
 Sample application code is included in this project. You can use or modify this app code or you can rip it out and include your own.
@@ -151,13 +165,20 @@ A related option is VS Code Dev Containers, which will open the project in your 
 
 Describe how to run and develop the app locally
 
-## Costs
+## Guidance
+
+### Region Availability
+
+This template uses [MODEL 1] and [MODEL 2] which may not be available in all Azure regions. Check for [up-to-date region availability](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#standard-deployment-model-availability) and select a region during deployment accordingly
+  * We recommend using [SUGGESTED REGION]
+
+### Costs
 
 You can estimate the cost of this project's architecture with [Azure's pricing calculator](https://azure.microsoft.com/pricing/calculator/)
 
-- [Azure Product] - [plan type] [link to pricing for product](https://azure.microsoft.com/pricing/)
+* [Azure Product] - [plan type] [link to pricing for product](https://azure.microsoft.com/pricing/)
 
-## Security Guidelines
+### Security
 
 > [!NOTE]
 > When implementing this template please specify whether the template uses Managed Identity or Key Vault
