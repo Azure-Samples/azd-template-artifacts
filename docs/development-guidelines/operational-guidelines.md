@@ -79,6 +79,9 @@ Particularly in cross organization situations, and when collaborators and contri
 
 GitHub repositories should be the central place for discussion of issues. When testing a sample, and upon finding a problem, open an issue describing the issue, how to reproduce it, what are your development environment characteristics (tools, tool version, OS, IDE), and providing screen captures or other important information to reproduce the issue.
 
+[GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) are a great tool to create backlogs, label issues, prioritize, groom and distribute task. Avoid using Teams or any other tool for that purpose, particularly when teams are distributed. Keeping all information centralized in the repo or around it, helps keeping teams aligned, focused and organized.
+
+
 ## Working on an issue
 
 When working on a task, be it a new feature or a bugfix, always open a related issue and assign it to a member of the team. Offer regular status referencing the issue. 
