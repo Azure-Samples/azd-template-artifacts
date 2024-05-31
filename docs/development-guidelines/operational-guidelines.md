@@ -27,6 +27,13 @@ Before the team starts coding, make sure to have designed scenarios, use-cases a
     * What is the application output?
 - What are the non-functional specifications, apart from the perfomance, security and usability success criteria defined by the standardization effort?
 
+### Creating a backlog
+
+Once you have the use-case and specification in place, create a backlog for all features to be developed, and prioritize them. Assign issues to respective experts, and check the progress on a regular basis.
+Progress can be shared during standups or async on a Teams chat.
+
+When the issue is completed, close it, referencing the pull-request that has addressed it.
+
 ## Standardization guidelines
 
 When creating the repository using the automated tool by cloning the [TBD repository], a [Success criteria checklist or definition of done](./definition-of-done.md) issue will be open in your repo. 
@@ -67,6 +74,16 @@ Particularly in cross organization situations, and when collaborators and contri
 
 - *Documentation*:
     - Make sure all the standadrization designated files like readme.md, licence.md, contributing.md, etc, are in place and follow the conventions.
+
+## Addressing issues and developer discussion
+
+GitHub repositories should be the central place for discussion of issues. When testing a sample, and upon finding a problem, open an issue describing the issue, how to reproduce it, what are your development environment characteristics (tools, tool version, OS, IDE), and providing screen captures or other important information to reproduce the issue.
+
+## Working on an issue
+
+When working on a task, be it a new feature or a bugfix, always open a related issue and assign it to a member of the team. Offer regular status referencing the issue. 
+
+When the issue is completed, close it, referencing the pull-request that has addressed it.
 
 ## Code freeze
 
