@@ -30,9 +30,11 @@ Before the team starts coding, make sure to have designed scenarios, use-cases a
 ### Creating a backlog
 
 Once you have the use-case and specification in place, create a backlog for all features to be developed, and prioritize them. Assign issues to respective experts, and check the progress on a regular basis.
+Use the backlog to create scopes mapping to [milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones), and assign them to the corresponding milestone.
+
 Progress can be shared during standups or async on a Teams chat.
 
-When the issue is completed, close it, referencing the pull-request that has addressed it.
+When the issue is completed, close it, referencing the pull request that has addressed it. For example comment and close with `Fixed by #[number of PR]`
 
 ## Standardization guidelines
 
@@ -90,7 +92,8 @@ When the issue is completed, close it, referencing the pull-request that has add
 
 ## Code freeze
 
-A team must agree to a roadmap and development cycle, including a code freeze. A sample is considered done, when the [Success Criteria](./definition-of-done.md) is met and the validation is passed.
+A team must agree to a roadmap mapping to one or several [milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) and development cycle, including a code freeze. A sample is considered done, when the [Success Criteria](./definition-of-done.md) is met and the validation is passed.
 
+Once agreed to, a code freeze is generally non-negotiable, though certain tasks can be spilled or descoped, and assigned to a post delivery milestone.
 
 By following these operational guidelines, your cross-functional/cross org. v-team can work cohesively, ensuring high-quality application samples that are consistent, reliable, and aligned with our best practices for high quality samples.
