@@ -16,7 +16,7 @@ A technical lead, depending on their seniority and competence, may be the ultima
 
 ## Case scenarios and specification
 
-Before the team starts coding, make sure to have designed scenarios, use-cases and specification, answering this questions
+Before the team starts coding, make sure to have designed scenarios, use-cases and specification, answering thes questions
 
 - What services, tools and products are we showcasing?
 - What are our technical requirements?
