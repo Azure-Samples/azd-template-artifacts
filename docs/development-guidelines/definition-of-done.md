@@ -53,6 +53,7 @@ In the absense of e2e tests,
 ## Security requirements
 
 - [ ] Microsoft Managed Identity is implemented
+- [ ] [microsoft/security-devops-action](https://github.com/microsoft/security-devops-action) is integrated to the CI/CD pipeline and the analyzer were ran
 
 When a service selected doesn't support Managed Identity, the corresponding issue must have been reported and the security considerations section in the readme, should clearly explain the alternatives.
 
