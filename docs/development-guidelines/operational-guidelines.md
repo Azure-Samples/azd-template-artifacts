@@ -68,4 +68,9 @@ Particularly in cross organization situations, and when collaborators and contri
 - *Documentation*:
     - Make sure all the standadrization designated files like readme.md, licence.md, contributing.md, etc, are in place and follow the conventions.
 
+## Code freeze
+
+A team must agree to a roadmap and development cycle, including a code freeze. A sample is considered done, when the [Success Criteria](./definition-of-done.md) is met and the validation is passed.
+
+
 By following these operational guidelines, your cross-functional/cross org. v-team can work cohesively, ensuring high-quality application samples that are consistent, reliable, and aligned with our best practices for high quality samples.
