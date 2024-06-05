@@ -9,19 +9,9 @@
 (make sure to highlight the use case!)
 Sample application code is included in this project. You can use or modify this app code or you can rip it out and include your own.
 
-## Table of Contents
+[Features](#features) • [Gettting Started](#getting-started) • [Guidance](#guidance)
 
-1. [Features](#features)
-    * [Architecture Diagram](#architecture-diagram)
-    * [Demo Video](#demo-video-optional)
-2. [Getting Started](#getting-started)
-    * [GitHub Codespaces](#github-codespaces)
-    * [VS Code Dev Containers](#vs-code-dev-containers)
-    * [Local Environment](#local-environment)
-3. [Guidance](#guidance)
-    * [Region Availability](#region-availability)
-    * [Costs](#costs)
-    * [Security](#security)
+(include a screenshot of your template's endpoint here-- so users know what it should look like when they're done)
 
 ## Features
 
@@ -41,8 +31,7 @@ Include a diagram describing the application
 
 ## Getting Started
 
-You have a few options for getting started with this template.
-The quickest way to get started is GitHub Codespaces, since it will setup all the tools for you, but you can also [set it up locally](#local-environment).
+You have a few options for getting started with this template. The quickest way to get started is [GitHub Codespaces](#github-codespaces), since it will setup all the tools for you, but you can also [set it up locally](#local-environment). You can also use a [VS Code dev container](#vs-code-dev-containers)
 
 This template uses [MODEL 1] and [MODEL 2] which may not be available in all Azure regions. Check for [up-to-date region availability](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#standard-deployment-model-availability) and select a region during deployment accordingly
 
