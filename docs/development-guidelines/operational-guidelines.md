@@ -16,9 +16,9 @@ A technical lead, depending on their seniority and competence, may be the ultima
 
 ## Case scenarios and specification
 
-Before the team starts coding, make sure to have designed scenarios, use-cases and specification, answering thes questions
+Before the team starts coding, make sure to have designed scenarios, use-cases and specification, answering these questions
 
-- What services, tools and products are we showcasing?
+- What services, tools, and products are we showcasing?
 - What are our technical requirements?
 - What is the use case/functional specification? 
     * Who will interact with your application?
@@ -34,7 +34,7 @@ Use the backlog to create scopes mapping to [milestones](https://docs.github.com
 
 Progress can be shared during standups or async on a Teams chat.
 
-When the issue is completed, close it, referencing the pull request that has addressed it. For example comment and close with `Fixed by #[number of PR]`
+When the issue is completed, close it, referencing the pull request that has addressed it. For example, use the 'Close with comment' action to provide additional context and use `Fixed by #[number of PR]` to link to a pull request, if it's not already linked. You can also add `Closes #[number of issue]` in the pull request description, to link them.
 
 ## Standardization guidelines
 
@@ -48,7 +48,7 @@ The system will open related issues when found non-conforming or non-standard bl
 
 Version control ensures code integrity and taceability. Our open-source teams typically collaborate using repositories hosted on Azure-Samples or other organizations.
 
-We advise teams to losely use [GitHub](https://docs.github.com/en/get-started/using-github/github-flow) branching flows and development cycles, always branching out from default branch (default is `main`) and only integrating with a pull-request, with at least 1 reviewer. We strongly recommend you secure your default branch with as a [protected branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
+We advise teams to use [GitHub](https://docs.github.com/en/get-started/using-github/github-flow) branching flows and development cycles, always branching out from default branch (default is `main`) and only integrating with a pull-request, with at least 1 reviewer. We strongly recommend you secure your default branch with as a [protected branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
 
 - Main Branch: The main branch for stable, production-ready code.
 - Development Branch: A dev branch for integrating features before merging into main.
@@ -75,7 +75,7 @@ Particularly in cross organization situations, and when collaborators and contri
     - *Automated testing and validation*: Integrate automated end-to-end testing workflows to run on PR submissions. Make sure the automated validation pipeline [coming up] is in place.
 
 - *Documentation*:
-    - Make sure all the standadrization designated files like readme.md, licence.md, contributing.md, etc, are in place and follow the conventions.
+    - Make sure all the standadrization designated files like readme.md, licence.md, contributing.md, etc., are in place and follow the conventions.
 
 ## Addressing issues and developer discussion
 
