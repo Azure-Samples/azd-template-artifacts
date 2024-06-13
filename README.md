@@ -1,6 +1,11 @@
 # This is the template README for what is expected in submitted templates.
 
-# Project Name
+> [!IMPORTANT]
+> This is a standard readme file defining the required structure for template validation. Update as required, including replacing all instances of [Project Name] with your project's name, and remove this notice.
+> Please make sure to read the [next steps file](./next-steps.md) documentation, to learn more about additional setup steps, standardization, conventions and validation process.
+
+
+# [Project Name]
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](placeholder)
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](placeholder)
@@ -23,7 +28,7 @@ This project framework provides the following features:
 
 ### Architecture Diagram
 
-Include a diagram describing the application
+Include a diagram describing the application. You can take [this image](https://raw.githubusercontent.com/Azure-Samples/serverless-chat-langchainjs/main/docs/images/architecture.drawio.png) as a reference.
 
 ### Demo Video (optional)
 
