@@ -36,5 +36,5 @@ Create milestones that issues can be assigned to so ETA can be better establishe
 
 ## Collaborators
 
-> [NOTE]
+> [!NOTE]
 > For Microsoft authored samples only: collaborators should be added to a team with write access under the [Azure-Samples Org](https://github.com/Azure-Samples)
