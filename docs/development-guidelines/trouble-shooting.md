@@ -57,3 +57,5 @@ jobs:
 
 > [!WARNING]
 > The recommended actions may change or increase over time
+
+You can see the full example file [here](https://github.com/Azure-Samples/azd-ai-starter/blob/main/.github/workflows/azure-dev.yml)
