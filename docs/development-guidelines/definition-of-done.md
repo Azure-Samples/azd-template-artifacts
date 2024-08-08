@@ -26,8 +26,8 @@ The following checklist must be complete before a template is published
 - [ ] [Security guidelines](../../SECURITY.md) are in place
 - [ ] [Contribution guidelines](../../CONTRIBUTING.md) are in place
 - [ ] [Code of conduct](.github/CODE_OF_CONDUCT.md) is in place
-- [ ] [Issue template](.github/ISSUE_TEMPLATE.md) is in place
-- [ ] Language, model, and relevant technology topic labels are added, including `azd-templates` and `ai-azd-templates` (The latter is being created)
+- [ ] [Issue template](.github/ISSUE_TEMPLATE.md) or, when multiple templates are provides, they're located in a folder called `ISSUE_TEMPLATE`
+- [ ] Language, model, and relevant technology topic labels are added, including `azd-templates` and `ai-azd-templates`
 - [ ] Repo description is in place, describing the use case and technologies used in the solution
 
 ## Source code structure and conventions
