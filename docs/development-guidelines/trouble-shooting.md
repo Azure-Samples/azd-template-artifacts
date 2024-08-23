@@ -13,7 +13,7 @@ The following document is a collection of typical errors detected by the validat
 
 A viable solution is to create a flag to avoid assigning the principal type to service, and create it for the current user. It can be seen in this example:
 
-https://github.com/Azure-Samples/azure-openai-assistant-javascript/pull/18/files
+You can see the full example, here: https://github.com/Azure-Samples/azure-openai-assistant-javascript/pull/18/files
 
 In main.bicep
 
@@ -76,3 +76,24 @@ jobs:
 > The recommended actions may change or increase over time
 
 You can see the full example file [here](https://github.com/Azure-Samples/azd-ai-starter/blob/main/.github/workflows/azure-dev.yml)
+
+## Security requirements: security scan log
+
+A template's security scan may return several results with a SARIF format, as a result of running the @microsoft/security-devops-action. Solving a concrete error or warning may require the configuration or deployment of additional, with the consequent cost and deployment time increase.
+
+One common error, is using plain-text keys to authenticate requests to a service, typically represented by 
+
+> error: TA-000019 - For enhanced authentication security, use a managed identity. On Azure, managed identities eliminate the need for developers to have to manage credentials by providing an identity for the Azure resource in Azure AD and using it to obtain Azure Active Directory (Azure AD) tokens. 
+
+### Steps to fix this error
+
+Make sure Entra ID and Default Credentials are enabled for all services in the template.
+
+### Solving additional errors in the scan log
+
+Please find a file called security-scan-results.md, and follow the recommendations. 
+
+Disclaimer: those are security best practices that are by no means comprehensive. To make sure your deployment is production-grade, you must follow security guidelines by each service. A collection of resources addressing the most prevalent security issues reported for Intelligent Applications security scans, may be found here:
+
+<!-- Documentation page is a WIP, this link does not exist yet -->
+[Link to official docs](#)
