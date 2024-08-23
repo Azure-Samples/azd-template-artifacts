@@ -10,8 +10,25 @@ The following document is a collection of typical errors detected by the validat
 ### Error: UnmatchedPrincipalType: The PrincipalId '{id}' has type 'ServicePrincipal' , which is different from specified PrinciaplType 'User'.
 
 #### Steps to fix this error:
-[TBD]
 
+A viable solution is to create a flag to avoid assigning the principal type to service, and create it for the current user. It can be seen in this example:
+
+https://github.com/Azure-Samples/azure-openai-assistant-javascript/pull/18/files
+
+In main.bicep
+
+```yaml
+@description('Flag to decide where to create OpenAI role for current user')
+param createRoleForUser bool = true
+
+// User roles
+module openAiRoleUser 'core/security/role.bicep' = if (createRoleForUser) {
+  scope: resourceGroup
+  name: 'openai-role-user'
+  params: {
+    // more code
+
+```
 
 ## Security requirement: missing workflow
 
