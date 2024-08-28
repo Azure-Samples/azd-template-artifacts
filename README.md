@@ -18,6 +18,14 @@ Sample application code is included in this project. You can use or modify this 
 
 (include a screenshot of your template's endpoint here-- so users know what it should look like when they're done)
 
+## Important Security Notice (Template Owners, do not remove!)
+
+This template, the application code and configuration it contains, has been built to showcase Microsoft Azure specific services and tools. We strongly advise our customers not to make this code part of their production environments without implementing or enabling additional security features.  
+
+
+<!-- Documentation page is a WIP, this link does not exist yet -->
+For a more comprehensive list of best practices and security recommendations for Intelligent Applications, [visit our official documentation](#link)” 
+
 ## Features
 
 This project framework provides the following features:
