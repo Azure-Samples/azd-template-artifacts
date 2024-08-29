@@ -21,14 +21,14 @@ The following checklist must be complete before a template is published
 
 # Repository Management
 
-- [ ] Standards compliant [README.md](../../README.md) as the one in the example, is in place
-- [ ] [License](../../LICENSE.md) is in place. Make sure you choose the [correct license](https://www.microsoft.com/en-us/legal/intellectualproperty/open-source)
-- [ ] [Security guidelines](../../SECURITY.md) are in place
-- [ ] [Contribution guidelines](../../CONTRIBUTING.md) are in place
-- [ ] [Code of conduct](.github/CODE_OF_CONDUCT.md) is in place
-- [ ] [Issue template](.github/ISSUE_TEMPLATE.md) or, when multiple templates are provides, they're located in a folder called `ISSUE_TEMPLATE`
-- [ ] Language, model, and relevant technology topic labels are added, including `azd-templates` and `ai-azd-templates`
-- [ ] Repo description is in place, describing the use case and technologies used in the solution
+- [ ] Standards compliant [README.md](../../README.md) as the one in the example, is in place. The validator will check that at a minimum, the following sections are in place: `Important Security Notice`, `Features`, `Getting Started`, `Resources`, `Guidance`, as `h2` subtitles for sections in your [README.md](../../README.md).
+- [ ] [License](../../LICENSE.md) is in place. Make sure you choose the [correct license](https://www.microsoft.com/en-us/legal/intellectualproperty/open-source).
+- [ ] [Security guidelines](../../SECURITY.md) are in place.
+- [ ] [Contribution guidelines](../../CONTRIBUTING.md) are in place.
+- [ ] [Code of conduct](.github/CODE_OF_CONDUCT.md) is in place.
+- [ ] [Issue template](.github/ISSUE_TEMPLATE.md) or, when multiple templates are provides, they're located in a folder called `ISSUE_TEMPLATE`.
+- [ ] Language, model, and relevant technology topic labels are added, including `azd-templates` and `ai-azd-templates`.
+- [ ] Repo description is in place, describing the use case and technologies used in the solution.
 
 ## Source code structure and conventions
 
@@ -36,7 +36,6 @@ The following checklist must be complete before a template is published
 - [ ] DevContainer (/.devcontainer folder where applicable) configuration is in place
 - [ ] Infrastructure as code is in place (`/infra` folder where applicable, manifest files or code generators in the case of `Aspire` and similar )
 - [ ] Azure services configuration (/azure.yml file) is in place
-- [ ] Minimum coverage tests are in place
 
 ## Functional requirements
 
@@ -46,20 +45,26 @@ The following checklist must be complete before a template is published
 - [ ] Codespaces run [locally and in browser]
 - [ ] All tests pass
 
-In the absense of e2e tests, 
+In the absense of e2e tests, we kindly ask you to make sure that
 
 - [ ] The application has been manually tested to work as per the requirement
 
 ## Security requirements
 
-- [ ] Microsoft Managed Identity is implemented
-- [ ] [microsoft/security-devops-action](https://github.com/microsoft/security-devops-action) is integrated to the CI/CD pipeline and the analyzer were ran
+- [ ] Microsoft Managed Identity is implemented to authenticate to Azure AI Services
 
 When a service selected doesn't support Managed Identity, the corresponding issue must have been reported and the security considerations section in the readme, should clearly explain the alternatives.
 
 - Azure Key Vault is a preferred alternative
 
 ### The following items are not strictly enforced but may prevent the template from being added to the gallery
+
+#### Security requirements for production only 
+
+- [ ] [microsoft/security-devops-action](https://github.com/microsoft/security-devops-action) is integrated to the CI/CD pipeline and the analyzer were ran
+- [ ] Microsoft Managed Identity is used for all services and API endpoints
+
+#### Code quality and integrity
 
 - [ ] Project code follows standard structure, [per language](../structure-samples/structure-samples.md)
 - [ ] Code follows recommended styleguide
