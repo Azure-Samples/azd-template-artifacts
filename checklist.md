@@ -12,7 +12,7 @@
 - [ ] **Description** - Repo description is in place, describing the use case and technologies used in the solution
  
 ## Source code structure and conventions
-- [ ] **azure.yaml** - `azure.yaml` file is in place
+- [ ] **azure.yaml** - `azure.yaml` file is in place and services are configured for azd
     - [ ] **AZD Telemetry** - `azure.yaml` should include metadata for telemetry including version number. See [azure.yaml](https://github.com/Azure-Samples/todo-python-mongo-aca/blob/05a7aa59c0253628e293ca0fcc98f35a942df1cc/azure.yaml#L5)
     - [ ] **Service Source** - In `azure.yaml`, the `project` property for each service should point at a subfolder, not at root (`.`). Typically the subfolder is labeled `src` but that may vary. See [azure.yaml](https://github.com/Azure-Samples/todo-python-mongo-aca/blob/05a7aa59c0253628e293ca0fcc98f35a942df1cc/azure.yaml#L8)
 - [ ] **Infrastructure as code** is in place (`/infra` folder where applicable, manifest files or code generators in the case of `Aspire` and similar )
