@@ -1,11 +1,32 @@
 # Troubleshooting validation errors
 
-The following document is a collection of typical errors detected by the validation pipeline and how to fix them.
+## Provisioning and deployment errors
+
+The following section contains a collection of typical errors detected by the validation pipeline when running `azd up` and/or `azd down` and respective recommendations to fix them.
 
 > [!IMPORTANT]
 > This is a living document. Please check often for updates.
 
-## Functional requirement: deployment and provisioning error on `azd up`
+## Getting log information
+
+When coming across a validation error for those commands, in the issue created by the validation pipeline bot, follow this steps:
+
+- click on the `Details` panel header, to expland it and see the log, as you see in the gif file below.
+- find the error details, with more information about the error
+
+### Region availability
+
+Models are available in certain regions, only. If you come across an error referring to Region Availability, [go here](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#region-availability)
+
+Make sure to update your template readme.md file, to reflect the available regions for used models.
+
+### Quotas and limits
+
+Azure AI Services feature quotas and limits. For more information [refer to this document](https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits)
+
+Make sure that your template readme.md file, offers information or links to documentation on pricing, quotas and limits.
+
+## Other errors
 
 ### Error: UnmatchedPrincipalType: The PrincipalId '{id}' has type 'ServicePrincipal' , which is different from specified PrinciaplType 'User'.
 
@@ -30,7 +51,11 @@ module openAiRoleUser 'core/security/role.bicep' = if (createRoleForUser) {
 
 ```
 
-## Security requirement: missing workflow
+## Security requirements
+
+When the security scan is enabled, you may come across the following warnings
+
+### Missing workflow
 
 If either of the following actions are not present in the `.github/workflows` folder
 
@@ -47,7 +72,7 @@ Error: microsoft/security-devops-action is missing in .github/workflows/bicep-au
 
 indicating the workflow file and the action missing.
 
-### Steps to fix this error
+#### Steps to fix this error
 
 To fix the error, add the action to the corresponding workflow file, like for example:
 
@@ -77,7 +102,7 @@ jobs:
 
 You can see the full example file [here](https://github.com/Azure-Samples/azd-ai-starter/blob/main/.github/workflows/azure-dev.yml)
 
-## Security requirements: security scan log
+### Security requirements: Managed Identity
 
 A template's security scan may return several results with a SARIF format, as a result of running the @microsoft/security-devops-action. Solving a concrete error or warning may require the configuration or deployment of additional, with the consequent cost and deployment time increase.
 
@@ -85,15 +110,12 @@ One common error, is using plain-text keys to authenticate requests to a service
 
 > error: TA-000019 - For enhanced authentication security, use a managed identity. On Azure, managed identities eliminate the need for developers to have to manage credentials by providing an identity for the Azure resource in Azure AD and using it to obtain Azure Active Directory (Azure AD) tokens. 
 
-### Steps to fix this error
+#### Steps to fix this error
 
 Make sure Entra ID and Default Credentials are enabled for all services in the template.
 
 ### Solving additional errors in the scan log
 
-Please find a file called security-scan-results.md, and follow the recommendations. 
+Please identify the error code and head to [PS Rule Reference](https://azure.github.io/PSRule.Rules.Azure/en/rules/) to find a potential solution
 
-Disclaimer: those are security best practices that are by no means comprehensive. To make sure your deployment is production-grade, you must follow security guidelines by each service. A collection of resources addressing the most prevalent security issues reported for Intelligent Applications security scans, may be found here:
-
-<!-- Documentation page is a WIP, this link does not exist yet -->
-[Link to official docs](#)
+Disclaimer: To make sure your deployment is production-grade, you may need to follow additional security guidelines by each service.
