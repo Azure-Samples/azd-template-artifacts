@@ -1,6 +1,6 @@
 # Global Deployment
 
-This document outlines the best practices for handling global-standard type Azure OpenAI deployments, particularly focusing on the issue of resource deletion conflicts.
+This document outlines a workaround for a known upstream bug handling global-standard type Azure OpenAI deployments (issue of resource deletion conflicts).
 
 ## Issue
 
@@ -8,7 +8,7 @@ In certain scenarios, a global-standard type Azure OpenAI deployment may prevent
 
 ## Solution
 
-To address this issue, it is recommended to add pre-down hooks to the `azd down` command. These hooks can utilize the Azure CLI or Azure SDK to delete the deployment resources before executing the `azd down` command. This ensures that the `azd down` process is not blocked and all resources are destroyed as expected.
+To address this issue, you can add pre-down hooks to the `azd down` command. These hooks can utilize the Azure CLI or Azure SDK to delete the deployment resources before executing the `azd down` command. This ensures that the `azd down` process is not blocked and all resources are destroyed as expected. Once this bug is resolved, it's recommended to remove this script.
 
 ### Implementation Steps
 
