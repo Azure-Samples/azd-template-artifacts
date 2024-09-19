@@ -1,7 +1,7 @@
 # Before you start
 
 > [!IMPORTANT]
-> Please make sure to read the [next steps file](./next-steps.md) documentation, to learn more about scaffolding, standardization, conventions, validation and publishing process.
+> Please make sure to read the [next steps file](./next-steps.md) documentation, to learn more about scaffolding, standardization, conventions, validation, and publishing process.
 
 # This is the template README for what is expected in submitted templates.
 
