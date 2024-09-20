@@ -1,6 +1,6 @@
 # Global Deployment
 
-This document outlines the best practices for handling global-standard type Azure OpenAI deployments, particularly focusing on the issue of resource deletion conflicts.
+This document outlines a *short term solution* to circumvent resource deletion conflicts for global-standard type Azure OpenAI deployments, in order to pass the validation. If you use this workaround, make sure to check here often for updates.
 
 ## Issue
 
