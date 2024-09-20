@@ -17,7 +17,7 @@ and any other published list, meeting the criteria above
 
 ## Step 1: Creating a new template from scratch
 
-If you are creating a new template from scratch, we recommend you use our scaffolding mechanism.
+If you are creating a new template from scratch, we recommend you use one of the starter templates to build your application template.
 
 To create a new template with all the necessary content, configuration, and structure to successfully pass validation and qualify for curated collections, an author must use the scaffolding mechanism provided by running this command  
 
