@@ -4,7 +4,7 @@ This document explains the steps necessary to create, validate and publish a sta
 
 ## Who can publish to a collection?
 
-Some collections are open to all contributors, while more curated collections are only accepting contributions from internal to Microsoft employees and specific partners.
+Some collections are open to all contributors, while curated collections only accept contributions from internal to Microsoft employees and specific partners.
 
 ## What is a collection?
 
