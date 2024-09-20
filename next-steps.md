@@ -19,7 +19,7 @@ and any other published list, meeting the criteria above
 
 If you are creating a new template from scratch, we recommend you use our scaffolding mechanism.
 
-To create a new template with all the necessary content, configuration and structure to successfully pass validation and qualify for curated collections, an author must use the scaffolding mechanism provided by executing  
+To create a new template with all the necessary content, configuration, and structure to successfully pass validation and qualify for curated collections, an author must use the scaffolding mechanism provided by running this command  
 
 `azd init –t [starter-template-name]` 
 
