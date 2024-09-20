@@ -44,7 +44,7 @@ Guideline type | Link
 -- | --
 Development Guidelines | [azd-template-artifacts/docs/development-guidelines/development-process.md at main · Azure-Samples/azd-template-artifacts (github.com)](https://github.com/Azure-Samples/azd-template-artifacts/blob/main/docs/development-guidelines/development-process.md) 
 Operational Guidelines | [azd-template-artifacts/docs/development-guidelines/operational-guidelines.md at main · Azure-Samples/azd-template-artifacts (github.com)](https://github.com/Azure-Samples/azd-template-artifacts/blob/main/docs/development-guidelines/operational-guidelines.md) 
-Best practices per domain | [azd-template-artifacts/docs/development-guidelines/best-practices-per-domain.md at main · Azure-Samples/azd-template-artifacts (github.com)](https://github.com/Azure-Samples/azd-template-artifacts/blob/main/docs/development-guidelines/best-practices-per-domain.md) 
+Recommended practices per domain | [azd-template-artifacts/docs/development-guidelines/recommended-practices-per-domain.md at main · Azure-Samples/azd-template-artifacts (github.com)](https://github.com/Azure-Samples/azd-template-artifacts/blob/main/docs/development-guidelines/best-practices-per-domain.md) 
 Structure recommendation Samples | [azd-template-artifacts/docs/structure-samples/structure-samples.md at main · Azure-Samples/azd-template-artifacts (github.com)](https://github.com/Azure-Samples/azd-template-artifacts/blob/main/docs/structure-samples/structure-samples.md)
 
 
