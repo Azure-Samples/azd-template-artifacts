@@ -61,7 +61,6 @@ When a service selected doesn't support Managed Identity, the corresponding issu
 
 #### Security requirements for production only 
 
-- [ ] [microsoft/security-devops-action](https://github.com/microsoft/security-devops-action) is integrated to the CI/CD pipeline and the analyzer were ran
 - [ ] Microsoft Managed Identity is used for all services and API endpoints
 
 #### Code quality and integrity
