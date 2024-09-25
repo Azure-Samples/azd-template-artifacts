@@ -1,14 +1,15 @@
 # Before you start
 
 > [!IMPORTANT]
-> Please make sure to read the [next steps file](./next-steps.md) documentation, to learn more about scaffolding, standardization, conventions, validation, and publishing process.
+> Please make sure to read the [publishing guidelines](./publishing-guidelines.md), to learn more about additional setup steps, standardization, conventions and validation process, to successfully publish a template to one of our collections.
 
-# This is the template README for what is expected in submitted templates.
+# This is the template README for what is expected in submitted templates
 
 > [!IMPORTANT]
 > This is a standard readme file defining the required structure for template validation. Update as required, including replacing all instances of [Project Name] with your project's name, and remove this notice, and the one above.
 
 --- 
+
 
 # [Project Name]
 
