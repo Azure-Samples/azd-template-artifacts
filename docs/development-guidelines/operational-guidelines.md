@@ -83,10 +83,21 @@ GitHub repositories should be the central place for discussion of issues. When t
 
 [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) are a great tool to create backlogs, label issues, prioritize, groom and distribute task. Avoid using Teams or any other tool for that purpose, particularly when teams are distributed. Keeping all information centralized in the repo or around it, helps keeping teams aligned, focused and organized.
 
+> [!IMPORTANT]
+> We require template owners to abide by the integration guidelines for templates that are already published, to minimize the risk of regressions.
+
+## Integration code to the base branch (typically `main`) when a template is published
+
+Do not work directly on the base branch.
 
 ## Working on an issue
 
-When working on a task, be it a new feature or a bugfix, always open a related issue and assign it to a member of the team. Offer regular status referencing the issue. 
+When working on a task, be it a new feature or a bugfix,** always open a related issue and assign it to a member of the team. Offer regular status referencing the issue. **
+
+All development must be be done in feature branches.
+
+> [!IMPORTANT]
+> When the template is already published the [https://github.com/microsoft/template-validation-action](https://github.com/microsoft/template-validation-action) must be configured to run when opening a pull-request against `main` (or the base branch). No pull-request should be approved and merged without passing the validation.
 
 When the issue is completed, close it, referencing the pull-request that has addressed it.
 
