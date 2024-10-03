@@ -4,7 +4,7 @@ This document explains the steps necessary to create, validate and publish a sta
 
 ## Who can publish to a collection?
 
-Some collections are open to all contributors, while curated collections only accept contributions from internal to Microsoft employees and specific partners.
+Some collections are open to all contributors, while curated collections only accept contributions from internal to Microsoft employees and specific partners. If you want to have a template considered, make sure to read and follow the steps described below, and when you're ready, [fill out this form](https://forms.office.com/r/cy1ACkEGK5). We will review it and suggest a collection to include it in.
 
 ## What is a collection?
 
@@ -57,6 +57,7 @@ Please follow the links in the [Definition of Done](https://github.com/Azure-Sam
 
 Teams can manually run the validation process by adding the validation action [microsoft/template-validation-action](https://github.com/microsoft/template-validation-action) to their repository and following the guidelines in the reference, to make sure they pass validation before requesting inclusion in the collection. 
 
+If you meet the success criteria, you're ready to publish. Let us know by [filling out this form](https://forms.office.com/r/cy1ACkEGK5). We will review it and suggest a collection to include it in.
 
 ## Step4: Get the results of the validation action and act accordingly
 
