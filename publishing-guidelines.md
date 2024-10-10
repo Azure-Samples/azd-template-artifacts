@@ -96,7 +96,7 @@ Please see the recommendation to guarantee template health and integrity, in the
 
 ### Active development best practices
 
-We suggest that teams actively working on templates that are already published use a `develop` branch for new integration of features, and have a requirement to have a mandatory validation workflow triggered on push to `main` or default branch, using [microsoft/template-validation-action](https://github.com/microsoft/template-validation-action)
+We request that teams actively working on templates that are already published use a `develop` branch for new integration of features, and have a requirement to have a mandatory validation workflow triggered on push to `main` or default branch, using [microsoft/template-validation-action](https://github.com/microsoft/template-validation-action)
 
 ### Levels of non-conformity and expected action
 
@@ -104,12 +104,11 @@ Erroring Item | Level | Action
 -- | -- | --
 Readme.md errors | Moderate | Author receives a notification and unpublishing occurs within 7 days
 Missing standard OSS files | Moderate | Author receives a notification and unpublishing occurs within 7 days
-`azd up` fails | High | Author receives a notification and unpublishing occurs within 24 hours
+`azd up` fails | High | Author receives a notification and unpublishing occurs within 48 hours
 `azd down` fails | Moderate | Author receives a notification and unpublishing occurs within 7 days
 Missing .devcontainer config | Moderate | Author receives a notification and unpublishing occurs within 7 days
 Missing pipeling configuration (azure-dev.yml) | Low | Author receives a notification. No unpublishing occurs
 MI is enabled for all services | Moderate | Author receives a notification and unpublishing occurs within 7 days
-
 
 ## Give us feedback!
 
