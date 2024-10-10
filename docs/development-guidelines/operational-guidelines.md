@@ -97,7 +97,7 @@ When working on a task, be it a new feature or a bugfix,** always open a related
 All development must be be done in feature branches.
 
 > [!IMPORTANT]
-> When the template is already published the [https://github.com/microsoft/template-validation-action](https://github.com/microsoft/template-validation-action) must be configured to run when opening a pull-request against `main` (or the base branch). No pull-request should be approved and merged without passing the validation.
+> When the template is already published the [https://github.com/microsoft/template-validation-action](https://github.com/microsoft/template-validation-action), it must be configured to run when opening a pull-request against `main` (or the base branch). No pull-request should be approved and merged without passing the validation.
 
 When the issue is completed, close it, referencing the pull-request that has addressed it.
 
