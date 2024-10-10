@@ -84,7 +84,7 @@ GitHub repositories should be the central place for discussion of issues. When t
 [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) are a great tool to create backlogs, label issues, prioritize, groom and distribute task. Avoid using Teams or any other tool for that purpose, particularly when teams are distributed. Keeping all information centralized in the repo or around it, helps keeping teams aligned, focused and organized.
 
 > [!IMPORTANT]
-> We require template owners to abide by the integration guidelines for templates that are already published, to minimize the risk of regressions.
+> We require template owners to abide by the integration guidelines for all published templates to minimize the risk of regressions.
 
 ## Integration code to the base branch (typically `main`) when a template is published
 
