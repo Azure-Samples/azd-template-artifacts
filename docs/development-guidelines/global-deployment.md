@@ -10,7 +10,7 @@ To migrate to a global deployment SKU, follow these steps:
 
 2. **Default Sku to GlobalStandard**: Set the default value of the `DeploymentSkuName` parameter to `GlobalStandard` when possible. See the [global-standard-model-availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=python-secure#global-standard-model-availability) for more details.
 
-3. **Add Pre-Down Hooks**: Implement pre-down hooks to delete the model if needed. This ensures that the `azd down` process is not blocked and all resources are destroyed as expected. See the [troubleshooting section](#trouble-shooting) for more details.
+3. **Test**: After step number 2, test `azd up` and `azd down` to ensure everything works properly. There is currently a known issue with destroying resources properly in this scenario. If you have this issue, see the [troubleshooting section](#trouble-shooting) for more details on implementing the workaround (pre-down hooks to delete the model if needed. This ensures that the `azd down` process is not blocked and all resources are destroyed as expected.) Adding the pre-down hooks is only recommended until the known issue is resolved.
 
 4. **Test the Functionality**: Run the `azd up` and `azd down` commands to test the functionality and ensure that the migration is successful.
 
