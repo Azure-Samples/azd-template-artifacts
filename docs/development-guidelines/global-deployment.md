@@ -1,18 +1,32 @@
 # Global Deployment
 
-This document outlines a workaround for a known upstream bug handling global-standard type Azure OpenAI deployments (issue of resource deletion conflicts).
+This document outlines the migration guidance for transitioning to a global deployment SKU for GPT models in Azure OpenAI, as well as troubleshooting steps for handling resource deletion conflicts.
 
-## Issue
+## Migration Guidance
+
+To migrate to a global deployment SKU, follow these steps:
+
+1. **Add a Parameter for DeploymentSkuName**: Update your deployment configuration to include a parameter for `DeploymentSkuName`.
+
+2. **Default Sku to GlobalStandard**: Set the default value of the `DeploymentSkuName` parameter to `GlobalStandard` when possible. See the [global-standard-model-availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=python-secure#global-standard-model-availability) for more details.
+
+3. **Add Pre-Down Hooks**: Implement pre-down hooks to delete the model if needed. This ensures that the `azd down` process is not blocked and all resources are destroyed as expected. See the [troubleshooting section](#trouble-shooting) for more details.
+
+4. **Test the Functionality**: Run the `azd up` and `azd down` commands to test the functionality and ensure that the migration is successful.
+
+## Trouble-Shooting
+
+### Issue
 
 In certain scenarios, a global-standard type Azure OpenAI deployment may prevent the deletion of the OpenAI account, resulting in a conflict error when running the `azd down` command. Specifically, users may encounter a `409 Conflict` error with the error code `ResourceGroupDeletionBlocked`, leaving the OpenAI account resource undeleted.
 
-## Solution
+### Solution
 
 To address this issue, you can add pre-down hooks to the `azd down` command. These hooks can utilize the Azure CLI or Azure SDK to delete the deployment resources before executing the `azd down` command. This ensures that the `azd down` process is not blocked and all resources are destroyed as expected. Once this bug is resolved, it's recommended to remove this script.
 
 ### Implementation Steps
 
-1. **Create Pre-Down Hooks**: Implement pre-down hooks that will be executed prior to the azd down command.
+1. **Create Pre-Down Hooks**: Implement pre-down hooks that will be executed prior to the `azd down` command.
 
     An example of using Python SDK:
 
