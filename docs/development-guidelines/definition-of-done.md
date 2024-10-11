@@ -14,9 +14,6 @@ a functional application.
 
 ## Acceptance criteria for gallery acceptance
 
-> [WARNING]
-> This is a draft
-
 The following checklist must be complete before a template is published
 
 # Repository Management
@@ -36,6 +33,7 @@ The following checklist must be complete before a template is published
 - [ ] DevContainer (/.devcontainer folder where applicable) configuration is in place
 - [ ] Infrastructure as code is in place (`/infra` folder where applicable, manifest files or code generators in the case of `Aspire` and similar )
 - [ ] Azure services configuration (/azure.yml file) is in place
+- [ ] end-to-end testing with Playwright is in place, as specified in [these guidelines](./e2e-testing.md)
 
 ## Functional requirements
 
@@ -51,17 +49,25 @@ In the absense of e2e tests, we kindly ask you to make sure that
 
 ## Security requirements
 
-- [ ] Microsoft Managed Identity is implemented to authenticate to Azure AI Services
+- [ ] Microsoft Managed Identity is used for the following services
+
+- Azure AI
+- Azure APIM
+- Azure App Service
+- Azure Container Apps
+- Azure Event Grid
+- Azure Kubernetes Service
+- Azure Search
+- Azure SQL Server
+
+considered our Hero Services. 
 
 When a service selected doesn't support Managed Identity, the corresponding issue must have been reported and the security considerations section in the readme, should clearly explain the alternatives.
 
 - Azure Key Vault is a preferred alternative
 
-### The following items are not strictly enforced but may prevent the template from being added to the gallery
-
-#### Security requirements for production only 
-
-- [ ] Microsoft Managed Identity is used for all services and API endpoints
+> [!IMPORTANT]
+> Please note that this list may be regularly updated
 
 #### Code quality and integrity
 
