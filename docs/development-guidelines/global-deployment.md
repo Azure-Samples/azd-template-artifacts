@@ -6,13 +6,72 @@ This document outlines the migration guidance for transitioning to a global depl
 
 To migrate to a global deployment SKU, follow these steps:
 
-1. **Add a Parameter for DeploymentSkuName**: Update your deployment configuration to include a parameter for `DeploymentSkuName`.
+1. Add a parameter for each model used in the infrastructure to set the sku name, like chatGptDeploymentSkuName. Use that parameter as the sku input for the OpenAI deployments.
 
-2. **Default Sku to GlobalStandard**: Set the default value of the `DeploymentSkuName` parameter to `GlobalStandard` when possible. See the [global-standard-model-availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=python-secure#global-standard-model-availability) for more details.
+    In main.bicep:
 
-3. **Test**: After step number 2, test `azd up` and `azd down` to ensure everything works properly. There is currently a known issue with destroying resources properly in this scenario. If you have this issue, see the [troubleshooting section](#trouble-shooting) for more details on implementing the workaround (pre-down hooks to delete the model if needed. This ensures that the `azd down` process is not blocked and all resources are destroyed as expected.) Adding the pre-down hooks is only recommended until the known issue is resolved.
+    ```
+        param chatGptDeploymentSkuName string = ''
+        ...
+        module openAi 'br/public:avm/res/cognitive-services/account:0.5.4' = {
+            ...
+            params: {
+                ...
+                deployments: [
+                    {
+                        ...
+                        sku: {
+                            name: chatGptDeploymentSkuName
+                            ...
+                        }
+                    }
+                ]
+            }
+        }
+    ```
+   
+1. Add a parameter mapping to main.parameters.json or main.bicepparam that maps an azd environment variable to that parameter. This allows developers to customize the sku per azd environment easily. In the parameter mapping, set the default to GlobalStandard.
 
-4. **Test the Functionality**: Run the `azd up` and `azd down` commands to test the functionality and ensure that the migration is successful.
+    In main.parameters.json:    
+    ```
+        "chatGptDeploymentSkuName": {
+            "value": "${CHAT_GPT_DEPLOYMENT_SKU_NAME=GlobalStandard}"
+        }
+    ````
+
+    In main.bicepparam
+    ```
+        param chatGptDeploymentSkuName = readEnvironmentVariable('CHAT_GPT_DEPLOYMENT_SKU_NAME', 'GlobalStandard'))
+    ```
+
+1. Update the allowed location list in main.bicep because global standard SKU is not supported in some region for some models. See the [global-standard-model-availability](https://learn.microsoft.com/azure/ai-services/openai/concepts/models?tabs=python-secure#global-standard-model-availability) for more details.
+
+    ```
+    @description('Location for the OpenAI resource group')
+    @allowed([
+    'eastus'
+    'eastus2'
+    'northcentralus'
+    'southcentralus'
+    'swedencentral'
+    'westus'
+    'westus3'
+    ])
+    @metadata({
+    azd: {
+        type: 'location'
+    }
+    })
+    param openAiResourceGroupLocation string
+    ```
+
+1. In the documentation somewhere, provide guidance about how to set the sku back to standard, for developers that need it:
+   
+    ```shell
+        azd env set CHAT_GPT_DEPLOYMENT_SKU_NAME Standard
+    ```
+
+1. Test `azd up` and `azd down` to ensure everything works properly. There is currently a known issue with destroying resources properly in this scenario. If you have this issue, see the [troubleshooting section](#trouble-shooting) for more details on implementing the workaround (pre-down hooks to delete the model if needed. This ensures that the `azd down` process is not blocked and all resources are destroyed as expected.) Adding the pre-down hooks is only recommended until the known issue is resolved.
 
 ## Trouble-Shooting
 
