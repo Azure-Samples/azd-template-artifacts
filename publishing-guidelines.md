@@ -109,6 +109,7 @@ Missing standard OSS files | Moderate | Author receives a notification and unpub
 Missing .devcontainer config | Moderate | Author receives a notification and unpublishing occurs within 7 days
 Missing pipeling configuration (azure-dev.yml) | Low | Author receives a notification. No unpublishing occurs
 MI is enabled for all services | Moderate | Author receives a notification and unpublishing occurs within 7 days
+Missing required e2e tests | Moderate | Author receives a notification and unpublishing occurs within 15 days
 
 ## Give us feedback!
 
