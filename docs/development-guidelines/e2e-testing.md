@@ -118,6 +118,11 @@ jobs:
 
 The example above installs the necessary dependencies, including the Azure Developer CLI, in order to run `azd env get-value` and get the provisioned urls.
 
+#### Real examples can be found here:
+
+- [Python e2e Playwright tests action](https://github.com/Azure-Samples/azure-fastapi-postgres-flexible-aca/blob/main/.github/workflows/azure-dev.yml#L73) and [tests](https://github.com/Azure-Samples/azure-fastapi-postgres-flexible-aca/blob/main/src/tests/local/test_playwright.py)
+- [JavaScript e2e Playwright tests action](https://github.com/Azure-Samples/azure-search-openai-javascript/blob/main/.github/workflows/playwright.yml) and [tests](https://github.com/Azure-Samples/azure-search-openai-javascript/blob/main/tests/e2e/webapp.spec.ts)
+  
 ### Testing the application UI code example with Node.js
 
 #### Step 1: Make sure the variable is set
