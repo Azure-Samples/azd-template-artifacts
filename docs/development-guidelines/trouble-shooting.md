@@ -51,10 +51,6 @@ module openAiRoleUser 'core/security/role.bicep' = if (createRoleForUser) {
 
 ```
 
-### Global deployment endpoints related errors
-
-If you are implementing [Global Deployment Type](https://learn.microsoft.com/azure/ai-services/openai/how-to/deployment-types#global-versus-regional-deployment-types) and you come across `azd down` errors, or other issues, follow [this link](https://github.com/Azure-Samples/azd-template-artifacts/blob/main/docs/development-guidelines/global-deployment.md)
-
 ## Security requirements
 
 When the security scan is enabled, you may come across the following warnings
