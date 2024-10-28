@@ -34,6 +34,7 @@ The following checklist must be complete before a template is published
 
 - [ ] GitHub Actions (This refers to .github/workflows/azure-dev.yml or custom workflow to run on a GitHub runner) is in place
 - [ ] DevContainer (/.devcontainer folder where applicable) configuration is in place
+- [ ] .devcontainer.json configuration install latest `azd` version
 - [ ] Infrastructure as code is in place (`/infra` folder where applicable, manifest files or code generators in the case of `Aspire` and similar )
 - [ ] Azure services configuration (/azure.yml file) is in place
 
@@ -51,17 +52,16 @@ In the absense of e2e tests, we kindly ask you to make sure that
 
 ## Security requirements
 
-- [ ] Microsoft Managed Identity is implemented to authenticate to Azure AI Services
+- [ ] Security scan passes without warnings
+The security scan is using [PS Rule](https://azure.github.io/PSRule.Rules.Azure/features/#learn-by-example) with the following [custom baseline](https://github.com/microsoft/template-validation-action/blob/main/.ps-rule/templateCustom.Rule.yaml). It will check that Microsoft Identity is used where supported, and that secrets are not leaked, for services supported.
 
 When a service selected doesn't support Managed Identity, the corresponding issue must have been reported and the security considerations section in the readme, should clearly explain the alternatives.
 
 - Azure Key Vault is a preferred alternative
 
-### The following items are not strictly enforced but may prevent the template from being added to the gallery
+### The following items are not strictly enforced  until the 2024-11-30, but may prevent a new template from being added to the gallery
 
-#### Security requirements for production only 
-
-- [ ] Microsoft Managed Identity is used for all services and API endpoints
+- [Global Standard Deployment](https://aka.ms/ai-gallery/standards/global-deployment-migration) is used when model supported
 
 #### Code quality and integrity
 
