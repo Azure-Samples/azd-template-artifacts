@@ -14,7 +14,7 @@ The following configurations must be in place in the template's [azure.yaml](htt
 - Services must be correctly configured to be provisioned with the [Azure Developer CLI](https://github.com/Azure/azure-dev/blob/main/schemas/v1.0/azure.yaml.json), according to the schema.
 - To make sure cross operating system compatibility, make sure to set `docker.remoteBuild` to `true` for any containerized service, as shown in the picture below:
 
-<img width="499" alt="Screenshot 2024-11-15 at 9 52 22 AM" src="https://github.com/user-attachments/assets/7242fbf7-583e-4db7-91c0-d1ee9f28a142">
+<img width="499" alt="config azure.yaml for remoteBuilds in ACR" src="https://github.com/user-attachments/assets/7242fbf7-583e-4db7-91c0-d1ee9f28a142">
 
 ## CI/CD workflow for the Azure Developer CLI
 
