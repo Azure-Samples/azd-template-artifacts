@@ -10,4 +10,4 @@ There are required items and optional items in the guidelines. If an item is opt
 
 ## Status
 
-This living document is in draft.
+This is a living, versioned document.
