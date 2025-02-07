@@ -27,9 +27,12 @@ The following guidelines and the folders included, represent the conventional st
 │   │   ├── Services/
 │   │   ├── Repositories/
 │   │   └── ...
-│   ├── ProjectName.Web/
-│   │   ├── Controllers/
-│   │   ├── Views/
+│   ├── ProjectName.Web (Blazor)/
+│   │   ├── Components/
+|   |   |──── <ComponentName>
+|   |   |──── Layout
+|   |   |──── Pages
+│   │   ├── Services/
 │   │   ├── wwwroot/
 │   │   └── ...
 │   ├── ProjectName.Tests/
