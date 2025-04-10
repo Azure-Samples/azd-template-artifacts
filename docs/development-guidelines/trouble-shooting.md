@@ -30,7 +30,7 @@ Make sure that your template readme.md file, offers information or links to docu
 
 ### Error: UnmatchedPrincipalType: The PrincipalId '{id}' has type 'ServicePrincipal' , which is different from specified PrinciaplType 'User'.
 
-#### Steps to fix this error:
+#### Solution:
 
 A viable solution is to create a flag to avoid assigning the principal type to service, and create it for the current user. It can be seen in this example:
 
@@ -50,6 +50,32 @@ module openAiRoleUser 'core/security/role.bicep' = if (createRoleForUser) {
     // more code
 
 ```
+
+### Error BCP332: The provided value (whose length will always be greater than or equal to 15) is too long to assign to a target for which the maximum allowable length is 10
+
+The `maxLength` property defined for a parameter in `main.bicep` is too small for the actual value.
+
+#### Solution:
+
+Increase the `maxLength` value to accommodate longer inputs.
+
+### Principal XXX does not exist in the directory XXX. Check that you have the correct principal ID. If you are creating this principal and then immediately assigning a role, this error might be related to a replication delay. In this case, set the role assignment principalType property to a value, such as ServicePrincipal, User, or Group.  See https://aka.ms/docs-principaltype
+
+The RBAC assignment in `main.bicep` is missing the required `principalType` property. This can result in a replication delay or incorrect assignment.
+
+#### Solution:
+
+Add the `principalType` field, e.g. 'ServicePrincipal', 'User', or 'Group'.
+
+### ERROR: error executing step command 'deploy --all': failed deploying service 'indexer': archive/tar: write too long
+
+This is a known issue affecting both the Azure Developer CLI (azd) and the devcontainers/ci GitHub action.
+
+#### Solution:
+
+Pending on issues:
+  - https://github.com/Azure/azure-dev/issues/4803
+  - https://github.com/devcontainers/ci/issues/366
 
 ## Security requirements
 
