@@ -1,33 +1,30 @@
-<!--
-IF SUFFICIENT INFORMATION IS NOT PROVIDED VIA THE FOLLOWING TEMPLATE THE ISSUE MIGHT BE CLOSED WITHOUT FURTHER CONSIDERATION OR INVESTIGATION
--->
-> Please provide us with the following information:
-> ---------------------------------------------------------------
+---
+name: Documentation or guidance issue
+about: Report inaccurate guidance, broken links, or propose an improvement
+title: ""
+labels: ""
+assignees: ""
+---
 
-### This issue is for a: (mark with an `x`)
-```
-- [ ] bug report -> please search issues before submitting
-- [ ] feature request
-- [ ] documentation issue or request
-- [ ] regression (a behavior that used to work and stopped in a new release)
-```
+## Issue type
 
-### Minimal steps to reproduce
->
+- [ ] Inaccurate or outdated guidance
+- [ ] Broken link or example
+- [ ] Missing guidance
+- [ ] Other
 
-### Any log messages given by the failure
->
+## Description
 
-### Expected/desired behavior
->
+Describe the problem or requested improvement. Include the affected file or section.
 
-### OS and Version?
-> Windows 7, 8 or 10. Linux (which distribution). macOS (Yosemite? El Capitan? Sierra?)
+## Current and expected guidance
 
-### Versions
->
+Explain what the documentation says today and what you expected it to say.
 
-### Mention any other details that might be useful
+## Environment or versions
 
-> ---------------------------------------------------------------
-> Thanks! We'll be in touch soon.
+If the issue depends on a tool, runtime, Azure service, or operating system, include the relevant names and versions.
+
+## Additional context
+
+Add reproduction steps, logs, screenshots, or links to current authoritative documentation when applicable. Do not include secrets or other sensitive information.
