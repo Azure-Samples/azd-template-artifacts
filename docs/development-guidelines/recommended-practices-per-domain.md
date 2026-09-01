@@ -1,6 +1,6 @@
-# Best practices per development domain
+# Recommeded practices per development domain
 
-The following guidelines as a set of best-practices per domain, must be followed to ensure template functionality.
+The following guidelines as a set of recommended practices per domain, must be followed to ensure template functionality.
 
 > [!IMPORTANT]
 > This is a living guideline. Please check often for updates.

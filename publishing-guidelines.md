@@ -59,6 +59,13 @@ Teams can manually run the validation process by adding the validation action [m
 
 If you meet the success criteria, you're ready to publish. Let us know by [filling out this form](https://forms.office.com/r/cy1ACkEGK5). We will review it and suggest a collection to include it in.
 
+> [!IMPORTANT]
+> Please note that for a template to be published in the gallery the following repository rules -additional to the ones in the [Definition of Done](https://github.com/Azure-Samples/azd-template-artifacts/blob/main/docs/development-guidelines/definition-of-done.md), apply.
+
+* The repo must be published to GitHub
+* The repo must be public
+* The repo must have issues enabled
+
 ## Step4: Get the results of the validation action and act accordingly
 
 Whether you're running the validation workflow manually in your repository, or it has been run automatically by requesting the collection authors to open a pull-request against the collection list to include it (please read more about this process in the [publishing the template](#publishing-the-template) section, below), you can find the [Auto] issue, with the results of the validation scan.

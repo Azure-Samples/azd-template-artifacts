@@ -1,3 +1,21 @@
+This repo contains all of the artifacts required to build an azd template. An azd template allows a developer to have a fully working application or a application building block that is configured with infrastructure as code (IaC) to provision Azure resources, package the app code, and deploy to Azure with one command, `azd up`.
+
+In this repo you will find:
+- A sample README.md file (this file, see below)
+- [Recommended practices per domain](/workspaces/azd-template-artifacts/docs/development-guidelines/best-practices-per-domain.md)
+- [The definition of done for a template](docs/development-guidelines/definition-of-done.md)
+- [Development process](/workspaces/azd-template-artifacts/docs/development-guidelines/development-process.md)
+- Guidance on updating to use [Azure OpenAI global deployments](docs/development-guidelines/global-deployment.md)
+- [Operational guidelines](docs/development-guidelines/operational-guidelines.md)
+- A guide for [troubleshooting validation errors](docs/development-guidelines/operational-guidelines.md)
+- A guide for [using the AI-starter template](/workspaces/azd-template-artifacts/docs/next-steps/next-steps-ai-starter.md)
+- [Samples by language of expected repo structure](docs/structure-samples)
+- [Contributing guidelines](CONTRIBUTING.md)
+- [Publishing guidelines](publishing-guidelines.md)
+- [Security template and guidelines](SECURITY.md)
+
+Working with these artifacts gives you a starting point for building an azd template or an azd-compatable repo. When using with these artifacts, delete the instructional text before publishing your template or using for your own code base.
+
 # Before you start
 
 > [!IMPORTANT]
