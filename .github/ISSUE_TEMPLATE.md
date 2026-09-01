@@ -1,11 +1,3 @@
----
-name: Documentation or guidance issue
-about: Report inaccurate guidance, broken links, or propose an improvement
-title: ""
-labels: ""
-assignees: ""
----
-
 ## Issue type
 
 - [ ] Inaccurate or outdated guidance
