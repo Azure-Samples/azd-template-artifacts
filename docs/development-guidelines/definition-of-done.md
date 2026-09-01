@@ -37,6 +37,7 @@ The following checklist must be complete before a template is published
 - [ ] .devcontainer.json configuration install latest `azd` version
 - [ ] Infrastructure as code is in place (`/infra` folder where applicable, manifest files or code generators in the case of `Aspire` and similar )
 - [ ] Azure services configuration (/azure.yml file) is in place
+- [ ] `remoteBuild` is set to `true` to enable cross-platform support, in the [template configuration](https://github.com/Azure-Samples/azd-template-artifacts/blob/main/docs/development-guidelines/template-configuration.md) 
 
 ## Functional requirements
 
@@ -44,7 +45,7 @@ The following checklist must be complete before a template is published
 - [ ] GitHub Actions run tasks without errors
 - [ ] DevContainer has been tested locally and runs
 - [ ] Codespaces run [locally and in browser]
-- [ ] All tests pass
+- [ ] Playwright e2e tests are in place, to test the application has been successfully deployed, and all tests pass
 
 In the absense of e2e tests, we kindly ask you to make sure that
 
