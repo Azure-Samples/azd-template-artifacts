@@ -81,8 +81,8 @@ Batch is usually appropriate when:
 | Global Standard | Yes | Any Azure region | Pay-per-token | Most new templates and common workloads |
 | Data Zone Standard | Sometimes | Within a supported data zone | Pay-per-token | US/EU/APAC processing-boundary needs |
 | Standard | Sometimes | Single region | Pay-per-token | Single-region architectural or compliance needs |
-| Provisioned | No | Global, data zone, or regional depending type | Reserved capacity | Predictable high-volume production traffic |
-| Batch | No | Global or data zone depending type | Async discounted processing | Large non-interactive jobs |
+| Provisioned | No | Global, data zone, or regional depending on type | Reserved capacity | Predictable high-volume production traffic |
+| Batch | No | Global or data zone depending on type | Async discounted processing | Large non-interactive jobs |
 
 ## Data boundary guidance
 

@@ -1,4 +1,4 @@
-# Definition of done
+# Definition of done (DoD)
 
 A template is done when a new contributor can discover it, understand the scenario, run the documented setup, and successfully deploy the intended experience with Azure Developer CLI (`azd`).
 
@@ -26,12 +26,14 @@ For the shared meaning of **MUST**, **SHOULD**, and **MAY**, see [docs/readme.md
 These items are **MUST** requirements when preparing a template for the public Awesome AZD collection. They are not universal requirements for every private or standalone `azd` project.
 
 - [ ] `README.md` explains the scenario, prerequisites, deployment steps, verification steps, and cleanup guidance.
+- [ ] `README.md` contains the `## Important Security Notice` policy heading and the literal H2 headings `## Features`, `## Getting Started`, `## Guidance`, and `## Resources` required by the collection validator.
 - [ ] `LICENSE.md`, `SECURITY.md`, `CONTRIBUTING.md`, `.github/CODE_OF_CONDUCT.md`, and an issue template are present.
-- [ ] The repository description and topics are set to help users and collection reviewers identify the template.
+- [ ] The repository description is set, and the repository topics include `azd-templates` and `ai-azd-templates` along with relevant language, model, and technology topics.
 
 ### Review and publication readiness
 
 - [ ] The repository can point reviewers to evidence for the latest successful validation run, test run, or manual verification.
+- [ ] The Awesome AZD security validation using [PSRule for Azure](https://azure.github.io/PSRule.Rules.Azure/features/#learn-by-example) passes without warnings. `microsoft/template-validation-action` uses PSRule by default.
 - [ ] If the template is being submitted to Awesome AZD, the required gallery metadata and assets are prepared as described in [publishing-guidelines.md](../../publishing-guidelines.md).
 
 ## SHOULD
@@ -42,6 +44,16 @@ These items are **MUST** requirements when preparing a template for the public A
 - [ ] Security guidance explains how the template handles authentication, authorization, secrets, and operator setup.
 - [ ] When Azure services support Microsoft Entra ID or managed identities for the scenario, the template prefers them or documents why an alternative is required.
 - [ ] If you use [microsoft/template-validation-action](https://github.com/microsoft/template-validation-action/blob/main/README.md), its latest relevant run is green before submission. This action is Awesome AZD collection automation, not a generic `azd` requirement.
+
+The validation action checks for an `azure-dev` workflow and `.devcontainer` by default, and `useDevContainer` defaults to `true`. If those optional assets are intentionally omitted, configure the action step to validate only the paths the repository supports and disable dev-container execution:
+
+```yaml
+with:
+  validatePaths: "README.md,LICENSE.md,SECURITY.md,CONTRIBUTING.md,CODE_OF_CONDUCT.md,ISSUE_TEMPLATE.md,azure.yaml,infra"
+  useDevContainer: false
+```
+
+Adjust `validatePaths` when the template uses a framework-specific infrastructure path or a different supported repository layout.
 
 ## MAY
 
