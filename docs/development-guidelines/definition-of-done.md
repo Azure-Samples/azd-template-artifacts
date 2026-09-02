@@ -45,12 +45,14 @@ These items are **MUST** requirements when preparing a template for the public A
 - [ ] When Azure services support Microsoft Entra ID or managed identities for the scenario, the template prefers them or documents why an alternative is required.
 - [ ] If you use [microsoft/template-validation-action](https://github.com/microsoft/template-validation-action/blob/main/README.md), its latest relevant run is green before submission. This action is Awesome AZD collection automation, not a generic `azd` requirement.
 
-The validation action checks for an `azure-dev` workflow and `.devcontainer` by default, and `useDevContainer` defaults to `true`. If those optional assets are intentionally omitted, configure the action step to validate only the paths the repository supports and disable dev-container execution:
+The validation action checks for an `azure-dev` workflow and `.devcontainer` by default, and `useDevContainer` defaults to `true`. If those optional assets are intentionally omitted, configure the action step to validate only the paths the repository supports and disable dev-container execution. When `validatePaths` includes `README.md`, the action replaces its default heading check with the `README_H2_TAG` environment variable, so set it explicitly to keep the check consistent with the headings required above:
 
 ```yaml
 with:
   validatePaths: "README.md,LICENSE.md,SECURITY.md,CONTRIBUTING.md,CODE_OF_CONDUCT.md,ISSUE_TEMPLATE.md,azure.yaml,infra"
   useDevContainer: false
+env:
+  README_H2_TAG: "## Features,## Getting Started,## Guidance,## Resources"
 ```
 
 Adjust `validatePaths` when the template uses a framework-specific infrastructure path or a different supported repository layout.
