@@ -1,33 +1,22 @@
-<!--
-IF SUFFICIENT INFORMATION IS NOT PROVIDED VIA THE FOLLOWING TEMPLATE THE ISSUE MIGHT BE CLOSED WITHOUT FURTHER CONSIDERATION OR INVESTIGATION
--->
-> Please provide us with the following information:
-> ---------------------------------------------------------------
+## Issue type
 
-### This issue is for a: (mark with an `x`)
-```
-- [ ] bug report -> please search issues before submitting
-- [ ] feature request
-- [ ] documentation issue or request
-- [ ] regression (a behavior that used to work and stopped in a new release)
-```
+- [ ] Inaccurate or outdated guidance
+- [ ] Broken link or example
+- [ ] Missing guidance
+- [ ] Other
 
-### Minimal steps to reproduce
->
+## Description
 
-### Any log messages given by the failure
->
+Describe the problem or requested improvement. Include the affected file or section.
 
-### Expected/desired behavior
->
+## Current and expected guidance
 
-### OS and Version?
-> Windows 7, 8 or 10. Linux (which distribution). macOS (Yosemite? El Capitan? Sierra?)
+Explain what the documentation says today and what you expected it to say.
 
-### Versions
->
+## Environment or versions
 
-### Mention any other details that might be useful
+If the issue depends on a tool, runtime, Azure service, or operating system, include the relevant names and versions.
 
-> ---------------------------------------------------------------
-> Thanks! We'll be in touch soon.
+## Additional context
+
+Add reproduction steps, logs, screenshots, or links to current authoritative documentation when applicable. Do not include secrets or other sensitive information.

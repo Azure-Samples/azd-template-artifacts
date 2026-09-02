@@ -1,156 +1,159 @@
-# Python sample guidelines
+# Python sample guidance
 
-All Python samples should follow these guidelines.
+These guidelines describe a modern default for Python-based templates in this repository. They are **recommendations, not a single required architecture**. Choose the structure and tooling that fit the sample's purpose, then document that choice clearly in the repo.
 
-* [Project folder structure](#project-folder-structure)
-* [Security](#security)
-* [Dependencies](#dependencies)
-* [Version Compatibility](#version-compatibility)
-* [Code Quality](#code-quality)
-* [Testing](#testing)
-* [Monitoring](#monitoring)
-* [Package-specific guidelines](#package-specific-guidelines)
+- [Purpose and scope](#purpose-and-scope)
+- [Adaptable example layout](#adaptable-example-layout)
+- [Runtime support policy](#runtime-support-policy)
+- [Dependencies](#dependencies)
+- [Code quality](#code-quality)
+- [Testing](#testing)
+- [Azure identity and configuration](#azure-identity-and-configuration)
+- [Observability](#observability)
+- [Framework and platform notes](#framework-and-platform-notes)
+- [Authoritative references](#authoritative-references)
 
+## Purpose and scope
 
-## Project folder structure
+Use this guidance for Python application samples, libraries, CLIs, APIs, background workers, and Azure-hosted services.
 
-The following guidelines and the folders included, represent the conventional structure for a Python standard application.
+The goals are to:
 
-```bash
+- keep runtime expectations clear and supportable
+- align local development, CI, containers, and deployment configuration
+- encourage modern packaging and test practices
+- leave room for framework-specific conventions where appropriate
 
+## Adaptable example layout
+
+Not every sample needs the same folders. The following layout is a good starting point for many application-oriented repositories:
+
+```text
 ~root
-│
-├── .devcontainer
-│    ├── devcontainer.json
-│    └── post-create-command.sh              
-├── azure.yaml                      
-│
+├── .devcontainer/
+│   └── devcontainer.json
 ├── .github/
 │   └── workflows/
-│       ├── workflow1.yml           
-│       ├── workflow2.yml           
-│       └── ...                     
-│
 ├── infra/
-│   ├── main.bicep                  
-│   ├── main.parameters.bicep       
-│   ├── abbreviations.json          
-│   └── ...                         
-│
-├── src/                            
-│   ├── projectname/                
-│        ├── __init__.py             
-│        ├── core/                            
-│        └── ...
-│                      
-│
-├── tests/                          
-│   └── ...                         
-│
-├── *docs/                           
-│   └── ...                         
-│
-├── requirements-dev.txt                
-├── README.md                       
-└── .gitignore                      
-             
-
+├── src/
+│   └── sample_app/
+│       ├── __init__.py
+│       └── ...
+├── tests/
+├── docs/
+├── pyproject.toml
+├── README.md
+└── azure.yaml
 ```
-* optional additional docs folder for extended documentation files
 
-## Security
+Recommendations:
 
-### Handling Sensitive Data
+- Prefer a `pyproject.toml`-first setup.
+- A `src/` layout is recommended for non-trivial packages and applications because it helps catch import-path mistakes and matches common packaging guidance.
+- Add or omit folders such as `docs/`, `scripts/`, `samples/`, `migrations/`, or `tests/integration/` based on the sample's needs.
+- If the sample is intentionally minimal, a flatter structure can still be valid if the repo remains easy to understand.
 
-Both Django and Flask have a SECRET_KEY setting used for cryptographic signing.
+## Runtime support policy
 
-- SECRET_KEY must be generated and stored in Key Vault. See [main.parameters.json](https://github.com/Azure-Samples/azure-django-postgres-flexible-appservice/blob/9a9eed8a65d6b64323e67e9eb9405c903510e5d3/infra/main.parameters.json#L21), [main.bicep](https://github.com/Azure-Samples/azure-django-postgres-flexible-appservice/blob/9a9eed8a65d6b64323e67e9eb9405c903510e5d3/infra/main.bicep#L95)
-- SECRET_KEY should *not* have a default value in production settings (to make sure developers don't accidentally use the default insecure secret key).
+- Target **upstream-supported CPython releases** instead of freezing a hardcoded version list in this document.
+- Align the chosen Python runtime across:
+  - deployment configuration
+  - CI workflows
+  - devcontainer configuration
+  - README and contributor docs
+  - local tool configuration when relevant
+- Set `requires-python` in `pyproject.toml` so packaging metadata and tooling agree on the supported range.
+- Use only the language features available in the runtime versions the sample claims to support.
+- Test only the runtime and OS combinations the repository explicitly supports. Broad version or OS matrices are optional, not universal requirements.
+- In commands and documentation, prefer `python -m pip ...` over invoking `pip` directly.
+
+Example:
+
+```toml
+[project]
+requires-python = ">=3.11"
+```
+
+Choose the lower bound that matches the oldest Python version the sample actually supports.
 
 ## Dependencies
 
-You can choose to either generate requirements files using pip-tools with `.in` files or you can write them directly, as long as they follow these guidelines.
+- Prefer declaring application dependencies in `pyproject.toml`, typically using the `project.dependencies` metadata defined by modern packaging standards.
+- Use optional dependencies, dependency groups, requirements files, or lock files when they fit the workflow:
+  - extras for installable feature sets
+  - dependency groups for development or contributor workflows
+  - requirements files for deployment, export, or compatibility scenarios
+  - lock files when reproducibility is important for the chosen toolchain
+- Do **not** require one recursive `requirements-dev.txt` pattern for every sample.
+- Keep dependency update tooling and dependency scanning enabled in CI or repository settings where supported.
+- Document the install path the sample expects, for example:
+  - `python -m pip install -e .`
+  - `python -m pip install -e ".[dev]"`
+  - `python -m pip install -r requirements.txt`
 
-- The root should contain requirements-dev.txt for non-prod packages (linting, formatting, and testing). The package versions don't need to be specified. See [requirements-dev.txt](https://github.com/Azure-Samples/azure-fastapi-postgres-flexible-aca/blob/main/requirements-dev.txt) 
-- The requirements-dev.txt file should recursively include a requirements.txt file with the production dependencies.
-- The deployed code should contain `requirements.txt` for production dependencies or `pyproject.toml` if installed as an editable app. See [requirements.txt](https://github.com/Azure-Samples/azure-django-postgres-flexible-aca/blob/main/src/requirements.txt)
-- The requirements.txt file should pin exact versions for each package. See [requirements.txt](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/app/backend/requirements.txt), [pyproject.toml](https://github.com/Azure-Samples/azure-flask-postgres-flexible-appservice/blob/main/src/pyproject.toml)
-- The repo must be enabled to use dependabot and include a dependabot.yaml file. It should include at least two sections, one for "pip" and one for "github-actions". See [dependabot.yaml](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/.github/dependabot.yaml) Optionally, the repo can include a [dependabot-bot.yaml](https://github.com/pamelafox/flask-surveys-container-app/blob/main/.github/dependabot-bot.yml) for automatic merging of updates by [Depend-a-lot-bot](https://github.com/apps/depend-a-lot-bot).
-  - The `dependabot.yaml` file must point at the directory which contains `requirements-dev.txt`. Dependabot should follow the recursive instruction and find `requirements.txt` as well.
+## Code quality
 
-## Version Compatibility
+Every sample should define and document commands for linting, formatting, and tests.
 
-- Default to Python 3.11/3.12/3.13 for the deployed artifact and for the devcontainer. 
-- Don't use features introduced after 3.9, unless there's a good reason to do so. 
-- In `README.md` and elsewhere, use `python` to run commands.
-    - Instead of `pip install –r requirements.txt`,  use `python -m pip install –r requirements.txt` 
-    - The latter is more likely to work in more environments than the former `
+Recommended approach:
 
-## Code Quality
-
-For an example of a repo that follows these guidelines, see [python-sample-template](https://github.com/Azure-Samples/python-sample-template).
-
-- For variable naming, use [PEP8 conventions](https://pep8.org/#prescriptive-naming-conventions). Don't use the conventions of other languages, like JS/Java.
-- Use `flake8` or `ruff` with 'E' and 'F' options (default). Warnings related to docstrings can be ignored. Include in `requirements-dev.txt` and configure in [pyproject.toml](https://github.com/Azure-Samples/python-sample-template/blob/f69fa84b6fa44e1a6df4b219e998618d186de48a/pyproject.toml#L1)
-  - Run on pre-commit. See [.pre-commit-config.yaml](https://github.com/Azure-Samples/python-sample-template/blob/main/.pre-commit-config.yaml)
-  - Run in GitHub action. See [python.yaml](https://github.com/Azure-Samples/python-sample-template/blob/a2c4ae17dc15d9102b3a11e37459dcac1fb48dde/.github/workflows/python.yaml#L23)
-- Use `isort` or `ruff` with 'I' option. Include in `requirements-dev.txt` and configure in [pyproject.toml](https://github.com/Azure-Samples/python-sample-template/blob/a2c4ae17dc15d9102b3a11e37459dcac1fb48dde/pyproject.toml#L4)
-  - Run on pre-commit. See [.pre-commit-config.yaml](https://github.com/Azure-Samples/python-sample-template/blob/a2c4ae17dc15d9102b3a11e37459dcac1fb48dde/.pre-commit-config.yaml#L11)
-  - Run in GitHub action. See [python.yaml](https://github.com/Azure-Samples/python-sample-template/blob/a2c4ae17dc15d9102b3a11e37459dcac1fb48dde/.github/workflows/python.yaml#L23)
-- Use `pyupgrade` or `ruff` with `UP` option. Include in `requirements-dev.txt` and configure in [pyproject.toml](https://github.com/Azure-Samples/python-sample-template/blob/a2c4ae17dc15d9102b3a11e37459dcac1fb48dde/pyproject.toml#L4)
-  - Run on pre-commit. See [.pre-commit-config.yaml](https://github.com/Azure-Samples/python-sample-template/blob/a2c4ae17dc15d9102b3a11e37459dcac1fb48dde/.pre-commit-config.yaml#L11)
-  - Run in GitHub action. See [python.yaml](https://github.com/Azure-Samples/python-sample-template/blob/a2c4ae17dc15d9102b3a11e37459dcac1fb48dde/.github/workflows/python.yaml#L23)
-- Use `black` for formatting or `ruff format`, with a reasonable line length (<= 200). Include in `requirements-dev.txt` and configure in [pyproject.toml](https://github.com/Azure-Samples/python-sample-template/blob/a2c4ae17dc15d9102b3a11e37459dcac1fb48dde/pyproject.toml#L7)
-- Avoid ternary operators when possible, as they often lead to unreadable code.
-- For string formatting, prefer `.format()` when arguments are expressions and f-string for simple variable names. Your code should almost never use string concatenation. Do *not* use f-strings when logging.
+- Use a modern Python code quality stack such as:
+  - Ruff for linting and optionally formatting
+  - or a healthy Flake8/Black/isort-style stack
+- Follow standard Python naming and style conventions, including PEP 8 where applicable.
+- Keep formatting and linting rules explicit in project configuration rather than relying on undocumented defaults.
+- Run code quality checks locally and in CI.
+- Prefer concise, maintainable rules over opinionated one-off bans. Avoid universal mandates for arbitrary ternary or string-formatting preferences.
 
 ## Testing
 
-- The repo should use either `pytest` or the framework-specific testing module.
-- The repo should include the coverage library (typically via `pytest-cov`).
-- The pyproject.toml file should configure pytest to check coverage for the application code, using --cov= option. See [pyproject.toml](https://github.com/Azure-Samples/python-sample-template/blob/a2c4ae17dc15d9102b3a11e37459dcac1fb48dde/pyproject.toml#L12)
-- The pyproject.toml file or CI workflow should configure coverage to fail if the coverage is below 100% threshold. See [pyproject.toml](https://github.com/pamelafox/simple-fastapi-container/blob/f0111034355c733fa55382a5af49f3193ed074cc/pyproject.toml#L21), [python.yaml](https://github.com/Azure-Samples/azure-search-openai-demo/blob/aa02563ff18ce4f5f0cca15eaa59eb6155672f8e/.github/workflows/python-test.yaml#L51)
-- A CI/CD workflow should run all the unit tests, and fail if they fail.
-- Tests should use matrix to run against all supported Python versions (3.8+).
-- Tests should use matrix to run against all supported OSes (Windows, Mac, Linux).
+- Use `pytest` for most projects, or a framework-native runner when that is the better fit.
+- Configure automated test execution in CI.
+- Include coverage reporting for the code the sample owns.
+- Set a coverage threshold only if the repository defines one; the threshold is **repo policy**, not a universal 100% requirement.
+- Test the environments the sample claims to support rather than requiring every Python version or every operating system.
+- Add integration, end-to-end, accessibility, property-based, or load tests when they materially improve confidence for that sample.
 
-### API tests
+Examples of valid approaches:
 
-If the repo includes an API of some sort:
+- unit and integration tests with `pytest`
+- Django tests with Django's test tooling
+- FastAPI tests with `pytest` and HTTP client fixtures
+- additional tools such as Hypothesis, Schemathesis, Playwright, Axe, or Locust when the sample's scope justifies them
 
-- Either [schemathesis](https://pypi.org/project/schemathesis/) or [hypothesis](https://pypi.org/project/hypothesis/) should be used to perform property-based testing of the API parameters. You may want to run those separately from unit tests for speed reasons. See [property_based.py](https://github.com/pamelafox/flask-charts-api-container-app/blob/main/src/tests/property_based.py), [python-check.yaml](https://github.com/pamelafox/flask-charts-api-container-app/blob/befdfa1bcaf7a1afd48874c4de22a9094f40ee3e/.github/workflows/python-check.yaml#L35)
+## Azure identity and configuration
 
-### Frontend tests
+- Prefer **Azure Identity** and **managed identity** for Azure-hosted samples.
+- Use layered, non-secret configuration:
+  - committed defaults for non-sensitive settings
+  - environment variables or local `.env`-style developer configuration where appropriate
+  - Azure App Configuration, Key Vault, or platform settings for deployed environments
+- Do not commit secrets.
+- For frameworks that require an application secret, keep guidance narrowly scoped:
+  - generate the secret securely
+  - store production secrets outside source control, such as in Key Vault or platform-managed configuration
+  - do not ship an insecure production default
 
-If the repo includes a frontend (HTML/CSS):
+## Observability
 
-- Playwright tests should be used for end-to-end user flow tests. See [playwright.py](https://github.com/Azure-Samples/azure-django-postgres-aca/blob/main/demo-code/relecloud/playwright.py)
-- Playwright tests should be run in CI/CD (possibly in a different workflow from unit tests). See [playwright.yaml](https://github.com/Azure-Samples/azure-django-postgres-aca/blob/main/.github/workflows/playwright.yaml)
-- Axe should be used to check for accessibility issues. Errors should either be uploaded to Code Scanning tab, displayed in the pull request, or break the workflow.
+- Prefer structured logging over ad hoc `print()` statements for long-running services and server applications.
+- For server-side applications, prefer **OpenTelemetry** with **Azure Monitor** or another documented telemetry backend.
+- Capture enough logs, traces, and metrics to troubleshoot startup, request flow, dependencies, and failures.
+- Keep local developer observability simple, but ensure deployed samples show the intended production pattern.
+- Enable CI checks for dependency scanning and secret scanning where supported.
 
-### Load Tests
+## Framework and platform notes
 
-- If not using Azure Load Testing, use [Locust](https://locust.io/) to define the load tests.
+These are examples, not universal mandates:
 
-## Monitoring
+- **Flask / FastAPI / Django**: document the recommended local run command and any framework-specific settings the sample depends on.
+- **Gunicorn or other production servers**: include runtime server configuration only when the hosting model needs it.
+- **CLI or script samples**: a smaller structure may be more appropriate than a web-app layout.
+- **Azure Functions for Python**: follow the current Functions packaging and runtime guidance for the specific worker model the sample uses.
 
-- Prefer using `logging` or `logger` calls (framework-dependant) instead of `print()`. General guidance is to use` print()` for scripts, logging for web apps. The log level defaults to warning in production (generally), so `logging.info()` statements won’t show up in logs unless the app logger is configured otherwise. 
+## Authoritative references
 
-## Package-specific guidelines
-
-#### GUnicorn
-
-- There should be a gunicorn.conf.py file that specifies max_requests, max_requests_jitter, log_file, bind. See [FastAPI: gunicorn.conf.py](https://github.com/Azure-Samples/azure-fastapi-postgres-flexible-aca/blob/main/src/gunicorn.conf.py) or [Flask: gunicorn.conf.py](https://github.com/Azure-Samples/azure-flask-postgres-flexible-appservice/blob/main/src/gunicorn.conf.py)
-  - The gunicorn.conf.py should calculate the optimal number of workers and threads based on CPU count. (If the worker class is uvicorn, threads cannot be specified).
-- There should be a test to check that the gunicorn configuration file is valid. See [gunicorn_test.py](https://github.com/pamelafox/simple-fastapi-container/blob/main/src/gunicorn_test.py)
-
-#### Flask
-
-- The README command should use the Flask module to run the server, not call the Python file directly. See [README#running-locally](https://github.com/Azure-Samples/azure-flask-postgres-flexible-appservice#running-locally)
-- The README command for running the local server should include `--debug`. See [README#local-dev](https://github.com/pamelafox/simple-flask-server-example#local-development)
-- The README command for running the local server should include `--port=NNNN` (where NNNN is not 5000) to avoid collisions with built-in Mac application. See [README#running-locally](https://github.com/Azure-Samples/azure-flask-postgres-flexible-appservice#running-locally)
-  - The devcontainer.json should expose port NNNN. See [devcontainer.json](https://github.com/Azure-Samples/azure-flask-postgres-flexible-appservice/blob/1857bfe14adf08f04a0c3865927097a42580764a/.devcontainer/devcontainer.json#L14)
-
-#### Django
-
-- The admin URL should either be disabled or be randomly generated, to prevent drive-by Django admin login attempts. See [main.bicep:ADMIN_URL](https://github.com/pamelafox/django-quiz-app/blob/main/infra/main.bicep#L76) and [production.py:ADMIN_URL](https://github.com/pamelafox/django-quiz-app/blob/main/quizsite/production.py#L9)
+- [Python release status - Python Developer's Guide](https://devguide.python.org/versions/)
+- [Writing your `pyproject.toml` - Packaging Python Projects](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/)
+- [Dependency Groups - PyPA specifications](https://packaging.python.org/en/latest/specifications/dependency-groups/)
+- [pytest good integration practices](https://docs.pytest.org/en/stable/explanation/goodpractices.html)

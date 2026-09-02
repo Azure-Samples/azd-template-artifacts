@@ -1,70 +1,64 @@
-## Definition of done (DoD)
+# Definition of done (DoD)
 
-The "Definition of Done" in a software project is like the finish line for each task or user story. It's a checklist that ensures everything related to a piece of work is completed to an acceptable standard defined by the acceptance criteria before considering it truly finished.
+A template is done when a new contributor can discover it, understand the scenario, run the documented setup, and successfully deploy the intended experience with Azure Developer CLI (`azd`).
 
-In our case, we want template applications showcased in the gallery to guarantee developers can 
+Use this checklist before requesting publication or declaring a major template update ready.
 
-- Discover
-- Setup
-- Adapt
-- Extend
-- Deploy and publish
+## How to use this checklist
 
-a functional application.
+- Record evidence for each **MUST** item in the PR, issue, or workflow run where you completed it.
+- Treat **SHOULD** items as the default expectation unless you have a documented reason not to apply them.
+- Treat **MAY** items as optional polish.
 
-## Acceptance criteria for gallery acceptance
+For the shared meaning of **MUST**, **SHOULD**, and **MAY**, see [docs/readme.md](../readme.md).
 
-> [WARNING]
-> This is a draft
+## MUST
 
-The following checklist must be complete before a template is published
+### Core `azd` functionality
 
-# Repository Management
+- [ ] `azure.yaml` exists in the template repository root.
+- [ ] Infrastructure assets appropriate to the template are committed (for example `infra/`, or a framework-specific equivalent).
+- [ ] The documented `azd up` path has been executed successfully for the supported happy path.
+- [ ] If the template provisions Azure resources, the documented teardown path has been verified (`azd down` or an explicitly documented equivalent).
 
-- [ ] Standards compliant [README.md](../../README.md) as the one in the example, is in place. The validator will check that at a minimum, the following sections are in place: `Important Security Notice`, `Features`, `Getting Started`, `Resources`, `Guidance`, as `h2` subtitles for sections in your [README.md](../../README.md).
-- [ ] [License](../../LICENSE.md) is in place. Make sure you choose the [correct license](https://www.microsoft.com/en-us/legal/intellectualproperty/open-source).
-- [ ] [Security guidelines](../../SECURITY.md) are in place.
-- [ ] [Contribution guidelines](../../CONTRIBUTING.md) are in place.
-- [ ] [Code of conduct](.github/CODE_OF_CONDUCT.md) is in place.
-- [ ] [Issue template](.github/ISSUE_TEMPLATE.md) or, when multiple templates are provides, they're located in a folder called `ISSUE_TEMPLATE`.
-- [ ] Language, model, and relevant technology topic labels are added, including `azd-templates` and `ai-azd-templates`. You can find instructions on how to add topics following [this link](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)
-- [ ] Repo description is in place, describing the use case and technologies used in the solution.
+### Awesome AZD repository baseline
 
-## Source code structure and conventions
+These items are **MUST** requirements when preparing a template for the public Awesome AZD collection. They are not universal requirements for every private or standalone `azd` project.
 
-- [ ] GitHub Actions (This refers to .github/workflows/azure-dev.yml or custom workflow to run on a GitHub runner) is in place
-- [ ] DevContainer (/.devcontainer folder where applicable) configuration is in place
-- [ ] .devcontainer.json configuration install latest `azd` version
-- [ ] Infrastructure as code is in place (`/infra` folder where applicable, manifest files or code generators in the case of `Aspire` and similar )
-- [ ] Azure services configuration (/azure.yml file) is in place
-- [ ] `remoteBuild` is set to `true` to enable cross-platform support, in the [template configuration](https://github.com/Azure-Samples/azd-template-artifacts/blob/main/docs/development-guidelines/template-configuration.md) 
+- [ ] `README.md` explains the scenario, prerequisites, deployment steps, verification steps, and cleanup guidance.
+- [ ] `README.md` contains the `## Important Security Notice` policy heading and the literal H2 headings `## Features`, `## Getting Started`, `## Guidance`, and `## Resources` required by the collection validator.
+- [ ] `LICENSE.md`, `SECURITY.md`, `CONTRIBUTING.md`, `.github/CODE_OF_CONDUCT.md`, and an issue template are present.
+- [ ] The repository description is set, and the repository topics include `azd-templates` and `ai-azd-templates` along with relevant language, model, and technology topics.
 
-## Functional requirements
+### Review and publication readiness
 
-- [ ] `azd up` successfully provisions and deploys a functional app
-- [ ] GitHub Actions run tasks without errors
-- [ ] DevContainer has been tested locally and runs
-- [ ] Codespaces run [locally and in browser]
-- [ ] Playwright e2e tests are in place, to test the application has been successfully deployed, and all tests pass
+- [ ] The repository can point reviewers to evidence for the latest successful validation run, test run, or manual verification.
+- [ ] The Awesome AZD security validation using [PSRule for Azure](https://azure.github.io/PSRule.Rules.Azure/features/#learn-by-example) passes without warnings. `microsoft/template-validation-action` uses PSRule by default.
+- [ ] If the template is being submitted to Awesome AZD, the required gallery metadata and assets are prepared as described in [publishing-guidelines.md](../../publishing-guidelines.md).
 
-In the absense of e2e tests, we kindly ask you to make sure that
+## SHOULD
 
-- [ ] The application has been manually tested to work as per the requirement
+- [ ] The repository uses the copyable structure in [docs/template-readme.md](../template-readme.md) or an equivalent README structure tailored to the template.
+- [ ] Pull requests exercise the same documented setup path that end users follow.
+- [ ] Tests cover the deployable application or infrastructure logic that changed.
+- [ ] Security guidance explains how the template handles authentication, authorization, secrets, and operator setup.
+- [ ] When Azure services support Microsoft Entra ID or managed identities for the scenario, the template prefers them or documents why an alternative is required.
+- [ ] If you use [microsoft/template-validation-action](https://github.com/microsoft/template-validation-action/blob/main/README.md), its latest relevant run is green before submission. This action is Awesome AZD collection automation, not a generic `azd` requirement.
 
-## Security requirements
+The validation action checks for an `azure-dev` workflow and `.devcontainer` by default, and `useDevContainer` defaults to `true`. If those optional assets are intentionally omitted, configure the action step to validate only the paths the repository supports and disable dev-container execution. When `validatePaths` includes `README.md`, the action replaces its default heading check with the `README_H2_TAG` environment variable, so set it explicitly to keep the check consistent with the headings required above:
 
-- [ ] Security scan passes without warnings
-The security scan is using [PS Rule](https://azure.github.io/PSRule.Rules.Azure/features/#learn-by-example) with the following [custom baseline](https://github.com/microsoft/template-validation-action/blob/main/.ps-rule/templateCustom.Rule.yaml). It will check that Microsoft Identity is used where supported, and that secrets are not leaked, for services supported.
+```yaml
+with:
+  validatePaths: "README.md,LICENSE.md,SECURITY.md,CONTRIBUTING.md,CODE_OF_CONDUCT.md,ISSUE_TEMPLATE.md,azure.yaml,infra"
+  useDevContainer: false
+env:
+  README_H2_TAG: "## Features,## Getting Started,## Guidance,## Resources"
+```
 
-When a service selected doesn't support Managed Identity, the corresponding issue must have been reported and the security considerations section in the readme, should clearly explain the alternatives.
+Adjust `validatePaths` when the template uses a framework-specific infrastructure path or a different supported repository layout.
 
-- Azure Key Vault is a preferred alternative
+## MAY
 
-### The following items are not strictly enforced  until the 2024-11-30, but may prevent a new template from being added to the gallery
-
-- [Global Standard Deployment](https://aka.ms/ai-gallery/standards/global-deployment-migration) is used when model supported
-
-#### Code quality and integrity
-
-- [ ] Project code follows standard structure, [per language](../structure-samples/structure-samples.md)
-- [ ] Code follows recommended styleguide
+- [ ] Include a dev container or GitHub Codespaces configuration when it materially reduces setup friction.
+- [ ] Include CI/CD automation such as `azd pipeline config` output when it matches the repository's delivery model.
+- [ ] Include screenshots, demo videos, or architecture diagrams that make the scenario easier to evaluate.

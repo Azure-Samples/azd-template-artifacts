@@ -1,45 +1,27 @@
 ## Purpose
-<!-- Describe the intention of the changes being proposed. What problem does it solve or functionality does it add? -->
-* ...
 
-## Does this introduce a breaking change?
-<!-- Mark one with an "x". -->
-```
-[ ] Yes
-[ ] No
-```
+Describe the problem this pull request solves and the intended outcome.
 
-## Pull Request Type
-What kind of change does this Pull Request introduce?
+## Change type
 
-<!-- Please check the one that applies to this PR using "x". -->
-```
-[ ] Bugfix
-[ ] Feature
-[ ] Code style update (formatting, local variables)
-[ ] Refactoring (no functional changes, no api changes)
-[ ] Documentation content changes
-[ ] Other... Please describe:
-```
+- [ ] Correctness or broken-link fix
+- [ ] New or expanded guidance
+- [ ] Documentation restructure
+- [ ] Repository maintenance
+- [ ] Other
 
-## How to Test
-*  Get the code
+## Validation
 
-```
-git clone [repo-address]
-cd [repo-name]
-git checkout [branch-name]
-npm install
-```
+Describe the checks you ran. For recommendations or requirements, link to the validator, policy, platform constraint, or current authoritative source that supports the change.
 
-* Test the code
-<!-- Add steps to run the tests suite and/or manually test -->
-```
-```
+## Checklist
 
-## What to Check
-Verify that the following are valid
-* ...
+- [ ] Links and heading anchors resolve.
+- [ ] Commands and configuration examples use current syntax.
+- [ ] `MUST`, `SHOULD`, and `MAY` are used according to the repository definitions.
+- [ ] Volatile details such as runtime versions, model availability, quotas, and regions link to a maintained source.
+- [ ] Related guidance and navigation links remain consistent.
 
-## Other Information
-<!-- Add any other helpful information that may be needed here. -->
+## Additional context
+
+Add migration notes, screenshots, or reviewer guidance when applicable.
